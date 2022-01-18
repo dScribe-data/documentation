@@ -1,25 +1,29 @@
 # Datasets
 
 {% hint style="info" %}
-**Good to know:** All the methods shown below are synced to an example Swagger file URL and are kept up to date automatically with changes to the API.
+For more details, refer to our [openapi documentation.](https://dscribe-prod-i-app-customerapi.azurewebsites.net/v1/docs/)
 {% endhint %}
 
-## User actions
+### Get datasets
 
-{% swagger src="https://petstore.swagger.io/v2/swagger.json" path="/user/login" method="get" %}
-[https://petstore.swagger.io/v2/swagger.json](https://petstore.swagger.io/v2/swagger.json)
+{% swagger src="../../.gitbook/assets/openapi.yaml" path="/dataset/list" method="post" %}
+[openapi.yaml](../../.gitbook/assets/openapi.yaml)
 {% endswagger %}
 
-{% swagger src="https://petstore.swagger.io/v2/swagger.json" path="/user/logout" method="get" %}
-[https://petstore.swagger.io/v2/swagger.json](https://petstore.swagger.io/v2/swagger.json)
+### Create datasets
+
+{% swagger src="../../.gitbook/assets/openapi.yaml" path="/dataset/create" method="post" %}
+[openapi.yaml](../../.gitbook/assets/openapi.yaml)
 {% endswagger %}
 
-## Creating users
+### Update datasets
 
-{% swagger src="https://petstore.swagger.io/v2/swagger.json" path="/user/createWithList" method="post" %}
-[https://petstore.swagger.io/v2/swagger.json](https://petstore.swagger.io/v2/swagger.json)
+{% swagger src="../../.gitbook/assets/openapi.yaml" path="/dataset/update" method="post" %}
+[openapi.yaml](../../.gitbook/assets/openapi.yaml)
 {% endswagger %}
 
-{% swagger src="https://petstore.swagger.io/v2/swagger.json" path="/user/createWithArray" method="post" %}
-[https://petstore.swagger.io/v2/swagger.json](https://petstore.swagger.io/v2/swagger.json)
+### Delete datasets
+
+{% swagger src="../../.gitbook/assets/openapi.yaml" path="/dataset/delete" method="post" %}
+[openapi.yaml](../../.gitbook/assets/openapi.yaml)
 {% endswagger %}
