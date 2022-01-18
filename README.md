@@ -1,6 +1,6 @@
 # Welcome!
 
-## Welcome to the dScribe Graph API
+## Welcome to the dScribe API
 
 Welcome to the dScribe Graph API! Here you'll find all the documentation you need to get up and running with the dScribe Graph API.
 
