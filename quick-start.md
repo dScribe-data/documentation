@@ -44,10 +44,71 @@ The API key you obtained above
 
 ## Make your first request
 
-Lets start by getting listing all the reports stored in the dScribe graph.
+Lets start by listing all the reports stored in the dScribe graph.
 
-{% swagger src=".gitbook/assets/openapi.yaml" path="/report/list" method="post" %}
-[openapi.yaml](.gitbook/assets/openapi.yaml)
+{% swagger method="post" path="/report/list" baseUrl="https://your_tenant.dscribedata.com/api" summary="" %}
+{% swagger-description %}
+This query will return the first 25 results. You can use the skip and limit parameters to build in pagination.
+{% endswagger-description %}
+
+{% swagger-parameter in="body" name="body" type="json" %}
+
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```javascript
+{
+  "metadata": {
+    "total": 0
+  },
+  "results": [
+    {
+      "REPORTID": "string",
+      "CALC_FORMULA": "string",
+      "CALC_FORMULAFULLTEXT": "string",
+      "CALC_FORMULAHTML": "string",
+      "DESC": "string",
+      "DESCFULLTEXT": "string",
+      "DESCHTML": "string",
+      "INTERPRETATION": "string",
+      "NAME": "string",
+      "PROPERTIES": {
+        "{readable_id}": [
+          "string"
+        ]
+      }
+    }
+  ]
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="" %}
+```javascript
+{
+  "code": "string",
+  "message": "string"
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="404: Not Found" description="" %}
+```javascript
+{
+  "code": "string",
+  "message": "string"
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="500: Internal Server Error" description="" %}
+```javascript
+{
+  "code": "string",
+  "message": "string"
+}
+```
+{% endswagger-response %}
 {% endswagger %}
 
 {% hint style="info" %}
