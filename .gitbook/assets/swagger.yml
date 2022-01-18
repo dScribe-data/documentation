@@ -1,0 +1,1094 @@
+swagger: '2.0'
+info:
+  contact:
+    email: support@dscribedata.com
+  description: This API can be used to interact with the dScribe Graph. It exposes CRUD operations for all the major objects like KPIs, Attributes, Data Assets and Dataset Elements.
+  termsOfService: https://dscribedata.com/terms/
+  title: dScribe Data Catalog API
+  version: 1.0.0
+host: 'your_tenant.dscribedata.com'
+basePath: '/api'
+schemes:
+  - https
+tags:
+  - name: Report
+  - name: Data Asset
+  - name: Column
+paths:
+  /dataset/create:
+    post:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - description: Create View body. Creating properties in this way is not supported.
+          in: body
+          name: body
+          required: true
+          schema:
+            items:
+              $ref: '#/definitions/VIEWNoProperty'
+            type: array
+      responses:
+        '200':
+          description: A successful operation for POST, PUT and DELETE
+          schema:
+            $ref: '#/definitions/SuccessPostPutDelete'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: The specified resource was not found
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/Error'
+      tags:
+        - Data Asset
+  /dataset/delete:
+    post:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - description: Body to delete objects from the graph.
+          in: body
+          name: body
+          required: true
+          schema:
+            description: Array of IDs that have to be removed. When removing a KPI, the values should correspond with the KPIID field etc..
+            items:
+              type: string
+            type: array
+      responses:
+        '200':
+          description: A successful operation for POST, PUT and DELETE
+          schema:
+            $ref: '#/definitions/SuccessPostPutDelete'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: The specified resource was not found
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/Error'
+      tags:
+        - Data Asset
+      externalDocs:
+        description: Learn more about a Data Asset.
+        url: https://documentation.dscribedata.com/data-assets
+  /dataset/list:
+    post:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - description: Body to filter results
+          in: body
+          name: body
+          required: true
+          schema:
+            allOf:
+              - $ref: '#/definitions/Options'
+              - properties:
+                  where:
+                    $ref: '#/definitions/Where'
+                type: object
+      responses:
+        '200':
+          description: Successful operation
+          schema:
+            properties:
+              metadata:
+                $ref: '#/definitions/Metadata'
+              results:
+                items:
+                  allOf:
+                    - properties:
+                        KPIID:
+                          type: string
+                      required:
+                        - KPIID
+                      type: object
+                    - $ref: '#/definitions/VIEWNoConnectDisconnect'
+                type: array
+            type: object
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: The specified resource was not found
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/Error'
+      tags:
+        - Data Asset
+      externalDocs:
+        description: Learn more about a Data Asset.
+        url: https://documentation.dscribedata.com/data-assets
+  /dataset/update:
+    post:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - description: Update View body. When it comes to properties, only existing properties can be updated with a valid value that has been created in the admin portal of the app.
+          in: body
+          name: body
+          required: true
+          schema:
+            items:
+              allOf:
+                - properties:
+                    VIEWID:
+                      type: string
+                  required:
+                    - VIEWID
+                  type: object
+                - $ref: '#/definitions/VIEW'
+            type: array
+      responses:
+        '200':
+          description: A successful operation for POST, PUT and DELETE
+          schema:
+            $ref: '#/definitions/SuccessPostPutDelete'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: The specified resource was not found
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/Error'
+      tags:
+        - Data Asset
+      externalDocs:
+        description: Learn more about a Data Asset.
+        url: https://documentation.dscribedata.com/data-assets
+  /dse/create:
+    post:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - description: Create Column body. Creating properties in this way is not supported.
+          in: body
+          name: body
+          required: true
+          schema:
+            items:
+              $ref: '#/definitions/COLUMN'
+            type: array
+      responses:
+        '200':
+          description: A successful operation for POST, PUT and DELETE
+          schema:
+            $ref: '#/definitions/SuccessPostPutDelete'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: The specified resource was not found
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/Error'
+      tags:
+        - Column
+  /dse/delete:
+    post:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - description: Body to delete objects from the graph.
+          in: body
+          name: body
+          required: true
+          schema:
+            description: Array of IDs that have to be removed. When removing a KPI, the values should correspond with the KPIID field etc..
+            items:
+              type: string
+            type: array
+      responses:
+        '200':
+          description: A successful operation for POST, PUT and DELETE
+          schema:
+            $ref: '#/definitions/SuccessPostPutDelete'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: The specified resource was not found
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/Error'
+      tags:
+        - Column
+      externalDocs:
+        description: Learn more about a Column.
+        url: https://documentation.dscribedata.com/dse
+  /dse/list:
+    post:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - description: Body to filter results
+          in: body
+          name: body
+          required: true
+          schema:
+            allOf:
+              - $ref: '#/definitions/Options'
+              - properties:
+                  where:
+                    $ref: '#/definitions/Where'
+                type: object
+      responses:
+        '200':
+          description: Successful operation
+          schema:
+            properties:
+              metadata:
+                $ref: '#/definitions/Metadata'
+              results:
+                items:
+                  allOf:
+                    - properties:
+                        KPIID:
+                          type: string
+                      required:
+                        - KPIID
+                      type: object
+                    - $ref: '#/definitions/COLUMN'
+                type: array
+            type: object
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: The specified resource was not found
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/Error'
+      tags:
+        - Column
+      externalDocs:
+        description: Learn more about a Column.
+        url: https://documentation.dscribedata.com/dse
+  /dse/update:
+    post:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - description: Update Column body. When it comes to properties, only existing properties can be updated with a valid value that has been created in the admin portal of the app.
+          in: body
+          name: body
+          required: true
+          schema:
+            items:
+              allOf:
+                - properties:
+                    COLUMNID:
+                      type: string
+                  required:
+                    - COLUMNID
+                  type: object
+                - $ref: '#/definitions/COLUMN'
+            type: array
+      responses:
+        '200':
+          description: A successful operation for POST, PUT and DELETE
+          schema:
+            $ref: '#/definitions/SuccessPostPutDelete'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: The specified resource was not found
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/Error'
+      tags:
+        - Column
+      externalDocs:
+        description: Learn more about a Column.
+        url: https://documentation.dscribedata.com/dse
+  /report/create:
+    post:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - description: Create Report body. Creating properties in this way is not supported.
+          in: body
+          name: body
+          required: true
+          schema:
+            items:
+              $ref: '#/definitions/REPORTNoProperty'
+            type: array
+      responses:
+        '200':
+          description: A successful operation for POST, PUT and DELETE
+          schema:
+            $ref: '#/definitions/SuccessPostPutDelete'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: The specified resource was not found
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/Error'
+      tags:
+        - Report
+  /report/delete:
+    post:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - description: Body to delete objects from the graph.
+          in: body
+          name: body
+          required: true
+          schema:
+            description: Array of IDs that have to be removed. When removing a KPI, the values should correspond with the KPIID field etc..
+            items:
+              type: string
+            type: array
+      responses:
+        '200':
+          description: A successful operation for POST, PUT and DELETE
+          schema:
+            $ref: '#/definitions/SuccessPostPutDelete'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: The specified resource was not found
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/Error'
+      tags:
+        - Report
+      externalDocs:
+        description: Learn more about a Report.
+        url: https://documentation.dscribedata.com/reports
+  /report/list:
+    post:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - description: Body to filter results
+          in: body
+          name: body
+          required: true
+          schema:
+            allOf:
+              - $ref: '#/definitions/Options'
+              - properties:
+                  where:
+                    $ref: '#/definitions/Where'
+                type: object
+      responses:
+        '200':
+          description: Successful operation
+          schema:
+            properties:
+              metadata:
+                $ref: '#/definitions/Metadata'
+              results:
+                items:
+                  allOf:
+                    - properties:
+                        REPORTID:
+                          type: string
+                      required:
+                        - REPORTID
+                      type: object
+                    - $ref: '#/definitions/REPORTNoConnectDisconnect'
+                type: array
+            type: object
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: The specified resource was not found
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/Error'
+      tags:
+        - Report
+      externalDocs:
+        description: Learn more about a Reports.
+        url: https://documentation.dscribedata.com/reports
+  /report/update:
+    post:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - description: Update Report body. When it comes to properties, only existing properties can be updated with a valid value that has been created in the admin portal of the app.
+          in: body
+          name: body
+          required: true
+          schema:
+            items:
+              allOf:
+                - properties:
+                    REPORTID:
+                      type: string
+                  required:
+                    - REPORTID
+                  type: object
+                - $ref: '#/definitions/REPORT'
+            type: array
+      responses:
+        '200':
+          description: A successful operation for POST, PUT and DELETE
+          schema:
+            $ref: '#/definitions/SuccessPostPutDelete'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: The specified resource was not found
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/Error'
+      tags:
+        - Report
+      externalDocs:
+        description: Learn more about a Report.
+        url: https://documentation.dscribedata.com/reports
+definitions:
+  AND:
+    description: the logical AND operator. The API will only return documents that satisfy every statement.
+    items:
+      $ref: '#/definitions/Where'
+    type: array
+  COLUMN:
+    properties:
+      DATATYPE:
+        type: string
+      DESC:
+        type: string
+      DESCFULLTEXT:
+        type: string
+      DESCHTML:
+        type: string
+      EXPRESSION:
+        type: string
+      FIELDTYPE:
+        type: string
+      FOLDER:
+        type: string
+      IS_LEAF:
+        type: string
+      NAME:
+        type: string
+      PARENT:
+        type: string
+      TYPE:
+        type: string
+      VIEWID:
+        type: string
+    required:
+      - NAME
+    type: object
+  ConnectReport:
+    description: Using the connect key will look for REPORTs and create/remove a relation between the current object and the matching reports
+    properties:
+      where:
+        properties:
+          node:
+            $ref: '#/definitions/WhereNoProperties'
+        type: object
+    type: object
+  ConnectView:
+    description: Using the connect key will look for VIEWs and create/remove a relation between the current object and the matching reports
+    properties:
+      where:
+        properties:
+          node:
+            $ref: '#/definitions/WhereNoProperties'
+        type: object
+    type: object
+  Error:
+    properties:
+      code:
+        type: string
+      message:
+        type: string
+    required:
+      - code
+      - message
+    type: object
+  Metadata:
+    properties:
+      total:
+        description: The total number of objects in the graph. Use in conjunction with limit and skip to implement pagination.
+        type: number
+    type: object
+  OR:
+    description: Logical OR operator. The API will return the union of all the matches.
+    items:
+      $ref: '#/definitions/Where'
+    type: array
+  Options:
+    properties:
+      limit:
+        default: 20
+        description: The number of items that are being returned. Defaults to 20
+        type: number
+      skip:
+        default: 0
+        description: used in combination with limit to implement pagination.
+        type: number
+    type: object
+  REPORT:
+    properties:
+      CALC_FORMULA:
+        type: string
+      CALC_FORMULAFULLTEXT:
+        type: string
+      CALC_FORMULAHTML:
+        type: string
+      DESC:
+        type: string
+      DESCFULLTEXT:
+        type: string
+      DESCHTML:
+        type: string
+      INTERPRETATION:
+        type: string
+      NAME:
+        type: string
+      PROPERTIES:
+        properties:
+          '{readable_id}':
+            description: The readable_id as defined in the portal with an array of values
+            items:
+              type: string
+            type: array
+        type: object
+      REPORT:
+        properties:
+          connect:
+            items:
+              $ref: '#/definitions/ConnectReport'
+            type: array
+          disconnect:
+            items:
+              $ref: '#/definitions/ConnectReport'
+            type: array
+        type: object
+      VIEW:
+        properties:
+          connect:
+            items:
+              $ref: '#/definitions/ConnectView'
+            type: array
+          disconnect:
+            items:
+              $ref: '#/definitions/ConnectView'
+            type: array
+        type: object
+    required:
+      - NAME
+    type: object
+  REPORTNoConnectDisconnect:
+    properties:
+      CALC_FORMULA:
+        type: string
+      CALC_FORMULAFULLTEXT:
+        type: string
+      CALC_FORMULAHTML:
+        type: string
+      DESC:
+        type: string
+      DESCFULLTEXT:
+        type: string
+      DESCHTML:
+        type: string
+      INTERPRETATION:
+        type: string
+      NAME:
+        type: string
+      PROPERTIES:
+        properties:
+          '{readable_id}':
+            description: The readable_id as defined in the portal with an array of values
+            items:
+              type: string
+            type: array
+        type: object
+    required:
+      - NAME
+    type: object
+  REPORTNoProperty:
+    properties:
+      CALC_FORMULA:
+        type: string
+      CALC_FORMULAFULLTEXT:
+        type: string
+      CALC_FORMULAHTML:
+        type: string
+      DESC:
+        type: string
+      DESCFULLTEXT:
+        type: string
+      DESCHTML:
+        type: string
+      INTERPRETATION:
+        type: string
+      NAME:
+        type: string
+      REPORT:
+        properties:
+          connect:
+            items:
+              $ref: '#/definitions/ConnectReport'
+            type: array
+        type: object
+      VIEW:
+        properties:
+          connect:
+            items:
+              $ref: '#/definitions/ConnectView'
+            type: array
+        type: object
+    type: object
+  SuccessPostPutDelete:
+    properties:
+      failed:
+        type: number
+      retry:
+        type: number
+      successful:
+        type: number
+      time:
+        type: number
+      total:
+        type: number
+    type: object
+  VIEW:
+    properties:
+      CHANGED_BY:
+        type: string
+      CHANGED_ON:
+        type: string
+      CREATED_BY:
+        type: string
+      CREATED_ON:
+        type: string
+      DESC:
+        type: string
+      DESCFULLTEXT:
+        type: string
+      DESCHTML:
+        type: string
+      FOLDER:
+        type: string
+      NAME:
+        type: string
+      PROPERTIES:
+        properties:
+          '{readable_id}':
+            description: The readable_id as defined in the portal with an array of values
+            items:
+              type: string
+            type: array
+        type: object
+      REPORT:
+        properties:
+          connect:
+            items:
+              $ref: '#/definitions/ConnectReport'
+            type: array
+          disconnect:
+            items:
+              $ref: '#/definitions/ConnectReport'
+            type: array
+        type: object
+      TYPE:
+        type: string
+      VIEW:
+        properties:
+          connect:
+            items:
+              $ref: '#/definitions/ConnectView'
+            type: array
+          disconnect:
+            items:
+              $ref: '#/definitions/ConnectView'
+            type: array
+        type: object
+    required:
+      - NAME
+    type: object
+  VIEWNoConnectDisconnect:
+    properties:
+      CHANGED_BY:
+        type: string
+      CHANGED_ON:
+        type: string
+      CREATED_BY:
+        type: string
+      CREATED_ON:
+        type: string
+      DESC:
+        type: string
+      DESCFULLTEXT:
+        type: string
+      DESCHTML:
+        type: string
+      FOLDER:
+        type: string
+      NAME:
+        type: string
+      PROPERTIES:
+        properties:
+          '{readable_id}':
+            description: The readable_id as defined in the portal with an array of values
+            items:
+              type: string
+            type: array
+        type: object
+      TYPE:
+        type: string
+    required:
+      - NAME
+    type: object
+  VIEWNoProperty:
+    properties:
+      CHANGED_BY:
+        type: string
+      CHANGED_ON:
+        type: string
+      CREATED_BY:
+        type: string
+      CREATED_ON:
+        type: string
+      DESC:
+        type: string
+      DESCFULLTEXT:
+        type: string
+      DESCHTML:
+        type: string
+      FOLDER:
+        type: string
+      NAME:
+        type: string
+      REPORT:
+        properties:
+          connect:
+            items:
+              $ref: '#/definitions/ConnectReport'
+            type: array
+        type: object
+      TYPE:
+        type: string
+      VIEW:
+        properties:
+          connect:
+            items:
+              $ref: '#/definitions/ConnectView'
+            type: array
+        type: object
+    type: object
+  Where:
+    properties:
+      '{FIELD}':
+        description: Replace {FIELD} with one of the fields that are returned from the API. If you wanted to query on NAME for example you can use NAME, NAME_NOT, etc...
+        type: string
+      '{FIELD}_CONTAINS':
+        description: Replace {FIELD} with one of the fields that are returned from the API. If you wanted to query on NAME for example you can use NAME, NAME_NOT, etc...
+        type: string
+      '{FIELD}_IN':
+        description: Replace {FIELD} with one of the fields that are returned from the API. If you wanted to query on NAME for example you can use NAME, NAME_NOT, etc...
+        items:
+          type: string
+        type: array
+      '{FIELD}_NOT':
+        description: Replace {FIELD} with one of the fields that are returned from the API. If you wanted to query on NAME for example you can use NAME, NAME_NOT, etc...
+        type: string
+      '{FIELD}_NOT_CONTAINS':
+        description: Replace {FIELD} with one of the fields that are returned from the API. If you wanted to query on NAME for example you can use NAME, NAME_NOT, etc...
+        type: string
+      '{FIELD}_NOT_IN':
+        description: Replace {FIELD} with one of the fields that are returned from the API. If you wanted to query on NAME for example you can use NAME, NAME_NOT, etc...
+        items:
+          type: string
+        type: array
+      '{TAG}ID':
+        description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
+        type: string
+      '{TAG}ID_CONTAINS':
+        description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
+        type: string
+      '{TAG}ID_IN':
+        description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
+        items:
+          type: string
+        type: array
+      '{TAG}ID_NOT':
+        description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
+        type: string
+      '{TAG}ID_NOT_CONTAINS':
+        description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
+        type: string
+      '{TAG}ID_NOT_IN':
+        description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
+        items:
+          type: string
+        type: array
+    type: object
+  WhereNoProperties:
+    properties:
+      '{FIELD}':
+        description: Replace {FIELD} with one of the fields that are returned from the API. If you wanted to query on NAME for example you can use NAME, NAME_NOT, etc...
+        type: string
+      '{FIELD}_CONTAINS':
+        description: Replace {FIELD} with one of the fields that are returned from the API. If you wanted to query on NAME for example you can use NAME, NAME_NOT, etc...
+        type: string
+      '{FIELD}_IN':
+        description: Replace {FIELD} with one of the fields that are returned from the API. If you wanted to query on NAME for example you can use NAME, NAME_NOT, etc...
+        items:
+          type: string
+        type: array
+      '{FIELD}_NOT':
+        description: Replace {FIELD} with one of the fields that are returned from the API. If you wanted to query on NAME for example you can use NAME, NAME_NOT, etc...
+        type: string
+      '{FIELD}_NOT_CONTAINS':
+        description: Replace {FIELD} with one of the fields that are returned from the API. If you wanted to query on NAME for example you can use NAME, NAME_NOT, etc...
+        type: string
+      '{FIELD}_NOT_IN':
+        description: Replace {FIELD} with one of the fields that are returned from the API. If you wanted to query on NAME for example you can use NAME, NAME_NOT, etc...
+        items:
+          type: string
+        type: array
+      '{TAG}ID':
+        description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
+        type: string
+      '{TAG}ID_CONTAINS':
+        description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
+        type: string
+      '{TAG}ID_IN':
+        description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
+        items:
+          type: string
+        type: array
+      '{TAG}ID_NOT':
+        description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
+        type: string
+      '{TAG}ID_NOT_CONTAINS':
+        description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
+        type: string
+      '{TAG}ID_NOT_IN':
+        description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
+        items:
+          type: string
+        type: array
+    type: object
+securityDefinitions:
+  bearerAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+security:
+  - bearerAuth: []
+externalDocs:
+  description: Find out more about dScribe
+  url: https://dscribedata.com
+x-components:
+  responses:
+    InternalServerError:
+      content:
+        application/json:
+          schema:
+            $ref: '#/definitions/Error'
+      description: Internal Server Error
+    NotFound:
+      content:
+        application/json:
+          schema:
+            $ref: '#/definitions/Error'
+      description: The specified resource was not found
+    SuccessPostPutDelete:
+      content:
+        application/json:
+          schema:
+            $ref: '#/definitions/SuccessPostPutDelete'
+      description: A successful operation for POST, PUT and DELETE
+    Unauthorized:
+      content:
+        application/json:
+          schema:
+            $ref: '#/definitions/Error'
+      description: Unauthorized
+  requestBodies:
+    CreateColumnBody:
+      content:
+        application/json:
+          schema:
+            items:
+              $ref: '#/definitions/COLUMN'
+            type: array
+      description: Create Column body. Creating properties in this way is not supported.
+      required: true
+    CreateReportBody:
+      content:
+        application/json:
+          schema:
+            items:
+              $ref: '#/definitions/REPORTNoProperty'
+            type: array
+      description: Create Report body. Creating properties in this way is not supported.
+      required: true
+    CreateViewBody:
+      content:
+        application/json:
+          schema:
+            items:
+              $ref: '#/definitions/VIEWNoProperty'
+            type: array
+      description: Create View body. Creating properties in this way is not supported.
+      required: true
+    DeleteBody:
+      content:
+        application/json:
+          schema:
+            description: Array of IDs that have to be removed. When removing a KPI, the values should correspond with the KPIID field etc..
+            items:
+              type: string
+            type: array
+      description: Body to delete objects from the graph.
+      required: true
+    ListBody:
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/definitions/Options'
+              - properties:
+                  where:
+                    oneOf:
+                      - $ref: '#/definitions/Where'
+                      - $ref: '#/definitions/OR'
+                      - $ref: '#/definitions/AND'
+                type: object
+      description: Body to filter results
+      required: true
+    UpdateColumnBody:
+      content:
+        application/json:
+          schema:
+            items:
+              allOf:
+                - properties:
+                    COLUMNID:
+                      type: string
+                  required:
+                    - COLUMNID
+                  type: object
+                - $ref: '#/definitions/COLUMN'
+            type: array
+      description: Update Column body. When it comes to properties, only existing properties can be updated with a valid value that has been created in the admin portal of the app.
+      required: true
+    UpdateReportBody:
+      content:
+        application/json:
+          schema:
+            items:
+              allOf:
+                - properties:
+                    REPORTID:
+                      type: string
+                  required:
+                    - REPORTID
+                  type: object
+                - $ref: '#/definitions/REPORT'
+            type: array
+      description: Update Report body. When it comes to properties, only existing properties can be updated with a valid value that has been created in the admin portal of the app.
+      required: true
+    UpdateViewBody:
+      content:
+        application/json:
+          schema:
+            items:
+              allOf:
+                - properties:
+                    VIEWID:
+                      type: string
+                  required:
+                    - VIEWID
+                  type: object
+                - $ref: '#/definitions/VIEW'
+            type: array
+      description: Update View body. When it comes to properties, only existing properties can be updated with a valid value that has been created in the admin portal of the app.
+      required: true
