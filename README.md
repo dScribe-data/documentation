@@ -4,6 +4,10 @@
 
 Welcome to the dScribe Graph API! Here you'll find all the documentation you need to get up and running with the dScribe Graph API.
 
+{% hint style="info" %}
+For more details, refer to our [openapi documentation.](https://dscribe-prod-i-app-customerapi.azurewebsites.net/v1/docs/)
+{% endhint %}
+
 ## Want to jump right in?
 
 Feeling like an eager beaver? Jump in to the quick start docs and start making your first request within minutes:

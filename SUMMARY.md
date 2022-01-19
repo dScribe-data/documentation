@@ -7,7 +7,9 @@
 
 ## Examples
 
-* [Update Properties](examples/update-properties.md)
+* [List](examples/list/README.md)
+  * [List based on ID](examples/list/list-based-on-id.md)
+  * [List based on filters](examples/list/list-based-on-filters.md)
 
 ## Reference
 
