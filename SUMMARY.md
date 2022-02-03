@@ -1,8 +1,14 @@
 # Table of contents
 
-## Connectors
+## Enterprise Authentication
 
 * [Welcome!](README.md)
+* [SSO Providers](enterprise-authentication/sso-providers/README.md)
+  * [Azure AD](enterprise-authentication/sso-providers/azure-ad.md)
+
+## Connectors
+
+* [Welcome!](<README (2).md>)
 * [Connector Specific](connectors/connector-specific/README.md)
   * [SAP BusinessObjects](connectors/connector-specific/sap-business-objects.md)
 
