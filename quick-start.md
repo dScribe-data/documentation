@@ -4,11 +4,11 @@
 
 The first thing you have to do is get an API key. Go to the dScribe Portal and navigate to the admin section. Find the API keys menu item and click on it. You should see something like this:
 
-![The dScribe API keys page](<../.gitbook/assets/apikeys (1).png>)
+![The dScribe API keys page](<.gitbook/assets/apikeys (1).png>)
 
 Create a key with the following settings:
 
-![A superuser token](<../.gitbook/assets/create key.png>)
+![A superuser token](<.gitbook/assets/create key.png>)
 
 {% hint style="info" %}
 **Good to know**: here we are creating a superuser token. This means it will have permissions to do everything within the app. If you want to create a restricted token, look at our guides around security and add the necessary permissionsets to the token.
@@ -16,7 +16,7 @@ Create a key with the following settings:
 
 Copy the token by clicking on the copy icon:
 
-![](../.gitbook/assets/copy.png)
+![](.gitbook/assets/copy.png)
 
 This token can now be exchanged for an access\_token _to make authenticated requests. To get_ an access_\__token, make the following request (in postman or in the browser):&#x20;
 

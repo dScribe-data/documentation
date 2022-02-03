@@ -45,6 +45,6 @@ To get multiple IDs, do the following:
 
 The \__IN and \_NOT\_IN_ can also be used for all the fields listed here:
 
-{% content-ref url="../field-reference/datasets-fields.md" %}
-[datasets-fields.md](../field-reference/datasets-fields.md)
+{% content-ref url="../../reference/field-reference/datasets-fields.md" %}
+[datasets-fields.md](../../reference/field-reference/datasets-fields.md)
 {% endcontent-ref %}

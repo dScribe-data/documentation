@@ -1,16 +1,115 @@
 ---
-description: Before we go on to the actual examples, a note on relations.
+description: Before we go on to the actual examples, a note on properties.
 ---
 
-# Relations
+# Properties
 
-The metadata stored within dScribe is represented as a graph. This means relations between the different nodes are treated as a first class citizen. The API supports connecting and disconnecting nodes.
+Properties are used within the dScribe application to enrich your objects with extra metadata. Next to that, they are used to control what is visible to users logging in.
 
-The relations can be found in the dScribe application under the relation tab:
+### Reading
 
-![Relations tab within the dScribe portal](../.gitbook/assets/relations.png)
+Take the previous request:
 
-Let us take the same example as before:
+{% swagger method="post" path="/report/list" baseUrl="https://your_tenant.dscribedata.com/api" summary="" %}
+{% swagger-description %}
+This query will return the first 25 results. You can use the skip and limit parameters to build in pagination.
+{% endswagger-description %}
+
+{% swagger-parameter in="body" name="body" type="json" %}
+
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```javascript
+{
+  "metadata": {
+    "total": 0
+  },
+  "results": [
+    {
+      "REPORTID": "string",
+      "CALC_FORMULA": "string",
+      "CALC_FORMULAFULLTEXT": "string",
+      "CALC_FORMULAHTML": "string",
+      "DESC": "string",
+      "DESCFULLTEXT": "string",
+      "DESCHTML": "string",
+      "INTERPRETATION": "string",
+      "NAME": "string",
+      "PROPERTIES": {
+        "{readable_id}": [
+          "string"
+        ]
+      }
+    }
+  ]
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="" %}
+```javascript
+{
+  "code": "string",
+  "message": "string"
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="404: Not Found" description="" %}
+```javascript
+{
+  "code": "string",
+  "message": "string"
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="500: Internal Server Error" description="" %}
+```javascript
+{
+  "code": "string",
+  "message": "string"
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+The response looks something like this:
+
+```json
+{
+  "metadata": {
+    "total": 0
+  },
+  "results": [
+    {
+      "REPORTID": "string",
+      "CALC_FORMULA": "string",
+      "CALC_FORMULAFULLTEXT": "string",
+      "CALC_FORMULAHTML": "string",
+      "DESC": "string",
+      "DESCFULLTEXT": "string",
+      "DESCHTML": "string",
+      "INTERPRETATION": "string",
+      "NAME": "string",
+      "PROPERTIES": {
+        "{readable_id}": [
+          "string"
+        ]
+      }
+    }
+  ]
+}
+```
+
+Notice the PROPERTIES key. This key will be populated with all the readable ids and values of the properties assigned to the object. The readable ids (API handles) can be found in the dScribe application administration portal.
+
+![API Handle found in the dScribe administration portal](<.gitbook/assets/api handle.png>)
+
+### Writing
+
+Take the following request:
 
 {% swagger method="post" path="/report/update" baseUrl="https://your_tenant.dscribedata.com/api" summary="" %}
 {% swagger-description %}
@@ -61,7 +160,7 @@ This query will update the reports passed in.
 {% endswagger-response %}
 {% endswagger %}
 
-The request body looks like this:
+The body looks something like this:
 
 ```json
 [
@@ -160,39 +259,10 @@ The request body looks like this:
 ]
 ```
 
-Notice the keys REPORT and VIEW? This means that a REPORT can be linked to other REPORTs and VIEWs.
+Again notice the PROPERTIES key. In this call you can pass in the same API handles as discussed in the previous section. The properties passed in here **have to exist in the portal.** If you pass in properties that do not exist, the request will fail.
 
 {% hint style="info" %}
-The relations the API supports right now are: **REPORT, VIEW, COLUMN**
+You cannot create new properties via the API.
 {% endhint %}
 
-Connecting and disconnecting can be controlled via the connect and disconnect key. Sending a body like this will connect REPORT 1 with REPORT 2.
-
-{% hint style="danger" %}
-Only one type of connection can be made at any given time. In other words, you can only connect a REPORT with another REPORT or a VIEW. You cannot connect a REPORT with another REPORT and VIEW **in one call**. You will have to split them up.
-{% endhint %}
-
-```json
-[
-  {
-    "REPORTID": "REPORT 1",
-    "REPORT": {
-      "connect": [
-        {
-          "where": {
-            "node": {
-              "REPORTID": "REPORT 2"
-            }
-          }
-        }
-      ]
-    }
-  }
-]
-```
-
-Look at the fields reference to see what fields you can use within the API.
-
-{% content-ref url="field-reference/reports-fields.md" %}
-[reports-fields.md](field-reference/reports-fields.md)
-{% endcontent-ref %}
+The entire properties object will be overwritten when updated this way. If you want to merge with existing properties, you will first have to fetch the existing data via a /list call and afterwards update with the properties you would like to see added.
