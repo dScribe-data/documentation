@@ -17,7 +17,7 @@ This document explains the steps needed to prepare your SAP Business Objects (BO
 4. Navigate to **Users and Groups** via the homepage\
    ****![](../../.gitbook/assets/SAP-BO-users-and-groups.jpg)\
 
-5. Select **Administrators** beneath **BO default** and create a new user![](../../.gitbook/assets/SAP-BO-administrators.jpg)\
+5. Select **Administrators** beneath **BO Default** and create a new user![](../../.gitbook/assets/SAP-BO-administrators.jpg)\
    ![](../../.gitbook/assets/SAP-BO-new-user.jpg)\
 
 6. Navigate to **Servers** via the homepage\
