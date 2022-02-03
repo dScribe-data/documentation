@@ -29,8 +29,10 @@ This document explains the steps needed to prepare your SAP BusinessObjects (BO)
 8. Double click on **WebIntelligenceProcessingServer**\
    ****![](../../.gitbook/assets/SAP-BO-web-intelligence-processing-server.jpg)\
 
-9. Search for the property **maximum connections** and set it to **1500**\
+9. Search for the property **Maximum Connections** and set it to **1500**\
    ****![](../../.gitbook/assets/SAP-BO-maximum-connections.jpg)\
+   \
+   This is needed because the API is causing a heavy load on your BO system and increasing the maximum connections will prevented from slowing down your system.\
 
 10. Using the **Access URL**, **Account Name** and **Password**, you can now create a new Connection in dScribe.
 

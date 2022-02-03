@@ -4,7 +4,7 @@
 
 * [Welcome!](README.md)
 * [Connector Specific](connectors/connector-specific/README.md)
-  * [SAP BusinessObjects](connectors/connector-specific/sap-businessobjects.md)
+  * [SAP BusinessObjects](connectors/connector-specific/sap-business-objects.md)
 
 ## API
 
