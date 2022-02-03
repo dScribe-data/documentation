@@ -7,7 +7,7 @@ This document explains the steps needed to prepare your SAP Business Objects (BO
 ### Step-by-step guide
 
 1. Log in on your **BO CMC** system via a user with administrator rights.
-2. Navigate to Applications > Restful Web Service\
+2. Navigate to **Applications** > **Restful Web Service**\
    ![](../../.gitbook/assets/SAP-BO-application.jpg)\
    ![](../../.gitbook/assets/SAP-BO-RESTful-Web-Service.jpg)\
 
