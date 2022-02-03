@@ -1,11 +1,5 @@
 # SAP Business Objects
 
-technical documentation
-
-### Preparing BO for a dScribe connection
-
-
-
 ### Summary
 
 This document explains the steps needed to prepare your SAP Business Objects (BO) environment for setting up a dScribe connection.
