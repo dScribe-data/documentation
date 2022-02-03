@@ -36,6 +36,6 @@ And so on.
 
 You can do this for every field listed here:
 
-{% content-ref url="../../reference/field-reference/datasets-fields.md" %}
-[datasets-fields.md](../../reference/field-reference/datasets-fields.md)
+{% content-ref url="../field-reference/datasets-fields.md" %}
+[datasets-fields.md](../field-reference/datasets-fields.md)
 {% endcontent-ref %}
