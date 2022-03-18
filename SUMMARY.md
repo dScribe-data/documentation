@@ -11,6 +11,7 @@
 * [Welcome!](<README (2).md>)
 * [Connector Specific](connectors/connector-specific/README.md)
   * [SAP BusinessObjects](connectors/connector-specific/sap-business-objects.md)
+  * [Snowflake](connectors/connector-specific/snowflake.md)
 
 ## API
 
