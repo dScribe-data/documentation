@@ -34,8 +34,8 @@ This connector can be used to automatically crawl all CSV and Excel files from s
 
 5.  The **privateKey** needs to be **base64 encoded**:
 
-    You can do this by going to [base64encode.org](https://www.base64encode.org). Paste your privateKey and click on encode.\
-    ![](../../.gitbook/assets/googledrive\_encodedPrivateKey.png)
+    You can do this by going to [base64encode.org](https://www.base64encode.org). Paste your privateKey and click on encode.![](<../../.gitbook/assets/googledrive\_encodedPrivateKey (1).png>)\
+
 
     \
     Save your encoded privateKey somewhere safe, you'll need it later. \
@@ -50,7 +50,7 @@ This connector can be used to automatically crawl all CSV and Excel files from s
 
 
     Paste the email adress of your Service Account and choose 'Editor' or 'Reader'.\
-    ![](../../.gitbook/assets/googledrive\_shareDrive2.png)\
+    ![](../../.gitbook/assets/googledrive\_sharedrive1.png)\
 
 8. Using the **email adress of your Service Account** and **the base64 encoded** **Private key,** you can now create a new Source with these connection details in dScribe.
 
