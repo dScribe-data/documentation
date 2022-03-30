@@ -4,6 +4,8 @@
 
 This document explains the steps needed to prepare your Google Drive environment for setting up a dScribe connection. dScribe uses a Service Account provided by Google Cloud Platform.
 
+This connector can be used to automatically crawl all CSV and Excel files from selected Google Drive folders.&#x20;
+
 ### Step-by-step guide
 
 1. Navigate to [Google Cloud Platform](https://console.cloud.google.com) and log in with a user with Admin permissions.
@@ -16,8 +18,7 @@ This document explains the steps needed to prepare your Google Drive environment
     \
     Enter a name and continue.\
     \
-    Select role 'Owner' or 'Viewer'.\
-    \
+    Select role 'Owner' or 'Viewer':\
     ![](<../../.gitbook/assets/Screenshot 2022-03-30 at 13.55.16.png>)\
     \
     Click done.\
