@@ -11,6 +11,7 @@
 * [Welcome!](<README (2).md>)
 * [Connector Specific](connectors/connector-specific/README.md)
   * [SAP BusinessObjects](connectors/connector-specific/sap-business-objects.md)
+  * [Sharepoint](connectors/connector-specific/sharepoint.md)
   * [BigQuery](connectors/connector-specific/bigquery.md)
   * [Google Drive](connectors/connector-specific/google-drive.md)
   * [Snowflake](connectors/connector-specific/snowflake.md)
