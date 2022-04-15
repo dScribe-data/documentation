@@ -9,7 +9,7 @@ This document explains the steps needed to prepare your SAP BusinessObjects (BO)
 1. Log in on your **BO CMC** (Central Management Console) via a user with administrator rights.
 2. Navigate to **Applications** > **RESTful Web Service**\
    ![](../../.gitbook/assets/SAP-BO-application.jpg)\
-   ![](../../.gitbook/assets/SAP-BO-RESTful-Web-Service.jpg)\
+   <img src="../../.gitbook/assets/SAP-BO-RESTful-Web-Service.jpg" alt="" data-size="original">\
 
 3. Copy the **Access URL**\
    ****![](../../.gitbook/assets/SAP-BO-access-url.jpg)\
