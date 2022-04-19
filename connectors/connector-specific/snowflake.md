@@ -17,7 +17,7 @@ openssl genrsa 2048 | openssl pkcs8 -topk8 -inform PEM -out rsa_key.p8t
 &#x20;3\. Generate the public key based on your private key
 
 ```
-$ openssl rsa -in rsa_key.p8 -pubout -out rsa_key.pub
+$ openssl rsa -in rsa_key.p8t -pubout -out rsa_key.pub
 ```
 
 &#x20;4\. Assign the public key to the snowflake user via the following command
