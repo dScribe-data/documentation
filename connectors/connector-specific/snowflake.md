@@ -17,7 +17,7 @@ openssl genrsa 2048 | openssl pkcs8 -topk8 -inform PEM -out rsa_key.p8t
 &#x20;3\. Generate the public key based on your private key
 
 ```
-$ openssl rsa -in rsa_key.p8t -pubout -out rsa_key.pub
+openssl rsa -in rsa_key.p8t -pubout -out rsa_key.pub
 ```
 
 &#x20;4\. Assign the public key to the snowflake user via the following command
@@ -29,7 +29,7 @@ ALTER USER dscribe SET RSA_PUBLIC_KEY='MIIBIjANBgkqh...';
 &#x20;5\. You can verify if your private key will work to connect to your Snowflake system via the SnowSQL cli&#x20;
 
 ```
-$ snowsql -a <account_identifier> -u <user> --private-key-path <path>/rsa_key.p8
+snowsql -a <account_identifier> -u <user> --private-key-path <path>/rsa_key.p8
 ```
 
 &#x20;Your account identifier can be found in the Snowflake cockpit via Organization&#x20;
@@ -38,7 +38,7 @@ $ snowsql -a <account_identifier> -u <user> --private-key-path <path>/rsa_key.p8
 
 The account identifier of the example above is 'AWTKGVC-QZ80313'
 
-If you connection is verified you can move to the next step
+If your connection is verified you can move to the next step
 
 &#x20;6\. Collect the following information to add in dScribe
 
