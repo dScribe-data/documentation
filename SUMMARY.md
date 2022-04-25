@@ -10,6 +10,7 @@
 
 * [Welcome!](<README (2).md>)
 * [Connector Specific](connectors/connector-specific/README.md)
+  * [Microsoft Power BI](connectors/connector-specific/microsoft-power-bi.md)
   * [SAP BusinessObjects](connectors/connector-specific/sap-business-objects.md)
   * [Sharepoint](connectors/connector-specific/sharepoint.md)
   * [BigQuery](connectors/connector-specific/bigquery.md)
