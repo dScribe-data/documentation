@@ -1,6 +1,8 @@
+---
+description: Managing Access Policies in dScribe
+---
+
 # Access Policies
-
-
 
 Access Policies are used to implement your metadata governance policies in dScribe. They help define who is able to contribute to the documentation of assets, assign ownership, manage administration activities and gain access to restricted assets.
 
@@ -21,7 +23,7 @@ Users who have been assigned the 'Restrict Discovery' permission (see [2. Contri
 
 Discovery-restricted assets will be indicated via the following icon:&#x20;
 
-![](broken-reference)
+![](<../.gitbook/assets/Incognito - active.svg>)
 
 {% hint style="info" %}
 _dScribe best practice:_ broad discoverability of definitions and data support adoption throughout the organisation and increase value for each user. Since no actual data is exposed in any way, it is recommended to keep your usage of Discovery Policies to a minimum.
@@ -52,11 +54,11 @@ This access policy type is used to grant access to the admin portal in dScribe. 
 * **Manage Users**: the ability to create new and manage existing users. For users synchronised with an Identity Provider (see [Broken link](broken-reference "mention")), certain fields will be locked.
 * **Manage Teams**: the ability to create new and manage existing teams. Includes the ability to manage which users are part of which team.&#x20;
 * **Manage Access Policies**: the ability to create new and manage existing access policies. Includes the ability to (un)assign policies to teams.\
-
+  \--------
 * **Manage Properties**: the ability to create new and manage existing properties.     \
-
+  \--------
 * **Manage Sources**: the ability to create new and manage existing sources in dScribe. If a connector is available for this source, the appropriate connection details can be added to enable automatic metadata crawling of the source.
 * **Manage Jobs**: the ability to execute ad-hoc or schedule repeated metadata crawling jobs, linked to one of the available sources with connection details setup.
 * **Manage API Keys**: the ability to create new or manage existing API Keys, used for custom integrations with dScribe. \
-
+  \--------
 * **View Analytics Dashboard**: access to the analytics dashboard, offering insights into the most active dScribe users, the most popular assets & more.
