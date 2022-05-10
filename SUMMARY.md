@@ -5,6 +5,7 @@
 * [Welcome!](README.md)
 * [SSO Providers](enterprise-authentication/sso-providers/README.md)
   * [Azure AD](enterprise-authentication/sso-providers/azure-ad.md)
+* [Access Policies](enterprise-authentication/access-policies.md)
 
 ## Connectors
 
