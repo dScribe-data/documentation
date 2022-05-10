@@ -1,11 +1,12 @@
 # Table of contents
 
-## Enterprise Authentication
+## Security
 
-* [Welcome!](README.md)
-* [SSO Providers](enterprise-authentication/sso-providers/README.md)
-  * [Azure AD](enterprise-authentication/sso-providers/azure-ad.md)
-* [Access Policies](enterprise-authentication/access-policies.md)
+* [Users](README.md)
+* [Teams](security/teams.md)
+* [Access Policies](security/access-policies.md)
+* [Enterprise Authentication](security/enterprise-authentication/README.md)
+  * [Azure AD](security/enterprise-authentication/azure-ad.md)
 
 ## Connectors
 
