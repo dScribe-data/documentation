@@ -4,7 +4,7 @@ Working with metrics, you have the following endpoints. In this chapter we will 
 
 #### Listing Metrics
 
-{% swagger method="post" path="/metrics/list" baseUrl="https://{your_tenant}.dscribedata.com/api" summary="List all the metrics stored in the dScribe platform" %}
+{% swagger method="post" path="/metric/list" baseUrl="https://{your_tenant}.dscribedata.com/api" summary="List all the metrics stored in the dScribe platform" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -138,7 +138,7 @@ Filtering on ID works the same way:
 
 #### Creating Metrics
 
-{% swagger method="post" path="/metrics/create" baseUrl="https://{your_tenant}.dscribedata.com/api" summary="Create new metrics in the dScribe platform" %}
+{% swagger method="post" path="/metric/create" baseUrl="https://{your_tenant}.dscribedata.com/api" summary="Create new metrics in the dScribe platform" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -275,7 +275,7 @@ The REPORT and VIEW keys are meant to link the KPI you just created to already e
 
 #### Updating Metrics
 
-{% swagger method="post" path="/metrics/update" baseUrl="https://{your_tenant}.dscribedata.com/api" summary="Update existing metrics stored in the dScribe platform" %}
+{% swagger method="post" path="/metric/update" baseUrl="https://{your_tenant}.dscribedata.com/api" summary="Update existing metrics stored in the dScribe platform" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -336,7 +336,7 @@ Updating works the same way as creating, with the only exception that you have t
 
 #### Deleting Metrics
 
-{% swagger method="post" path="/metrics/list" baseUrl="https://{your_tenant}.dscribedata.com/api" summary="Delete metrics from the dScribe platform" %}
+{% swagger method="post" path="/metric/list" baseUrl="https://{your_tenant}.dscribedata.com/api" summary="Delete metrics from the dScribe platform" %}
 {% swagger-description %}
 
 {% endswagger-description %}
