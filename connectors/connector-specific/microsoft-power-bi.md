@@ -20,9 +20,9 @@ For the official documentation by Microsoft, see [here](https://docs.microsoft.c
     &#x20;       ![](<../../.gitbook/assets/image (9).png>)\
 
 2.  Create an app registration\
-    ![](<../../.gitbook/assets/image (13).png>)\
+    ![](<../../.gitbook/assets/image (13) (1).png>)\
     \
-    ![](<../../.gitbook/assets/image (12).png>)\
+    ![](<../../.gitbook/assets/image (12) (1).png>)\
     \
     TIP 1: remember the name of your application, you will need it later
 
@@ -37,13 +37,13 @@ For the official documentation by Microsoft, see [here](https://docs.microsoft.c
    ![](<../../.gitbook/assets/image (2).png>)\
 
 5. Copy the client secret **value**\
-   ****![](<../../.gitbook/assets/image (4).png>)\
+   ****![](<../../.gitbook/assets/image (4) (1).png>)\
 
 6. Go back to Azure Active Directory > Overview and copy the **Tenant ID**\
    ****![](../../.gitbook/assets/image.png)\
 
 7. Create a new Security Group via Azure portal > Azure Active Directory > Groups (optional: you can choose to reuse an existing group)\
-   ![](<../../.gitbook/assets/image (14).png>)\
+   ![](<../../.gitbook/assets/image (14) (1).png>)\
 
 8. Add your App (see Step 2) as a member of the security group you created\
    ![](<../../.gitbook/assets/image (8).png>)\

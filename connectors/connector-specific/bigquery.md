@@ -6,7 +6,7 @@ This document explains the steps needed to prepare your BigQuery environment for
 
 ### Step-by-step guide
 
-1. Navigate to [Google Cloud Platform](https://console.cloud.google.com) and log in with a user with Admin permissions.
+1. Navigate to [Google Cloud Platform](https://console.cloud.google.com/) and log in with a user with Admin permissions.
 2. Create a new project: \
    ![](../../.gitbook/assets/googledrive\_createProject.png)![](../../.gitbook/assets/googledrive\_createProject2.png)\
 
@@ -32,7 +32,7 @@ This document explains the steps needed to prepare your BigQuery environment for
 
 5.  The **privateKey** needs to be **base64 encoded**:
 
-    You can do this by going to [base64encode.org](https://www.base64encode.org). Paste your privateKey and click on encode.![](<../../.gitbook/assets/googledrive\_encodedPrivateKey (1).png>)\
+    You can do this by going to [base64encode.org](https://www.base64encode.org/). Paste your privateKey and click on encode.![](<../../.gitbook/assets/googledrive\_encodedPrivateKey (1).png>)\
 
 
     \

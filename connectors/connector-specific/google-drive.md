@@ -8,7 +8,7 @@ This connector can be used to automatically crawl all CSV and Excel files from s
 
 ### Step-by-step guide
 
-1. Navigate to [Google Cloud Platform](https://console.cloud.google.com) and log in with a user with Admin permissions.
+1. Navigate to [Google Cloud Platform](https://console.cloud.google.com/) and log in with a user with Admin permissions.
 2. Create a new project: \
    ![](../../.gitbook/assets/googledrive\_createProject.png)![](../../.gitbook/assets/googledrive\_createProject2.png)\
 
@@ -34,7 +34,7 @@ This connector can be used to automatically crawl all CSV and Excel files from s
 
 5.  The **privateKey** needs to be **base64 encoded**:
 
-    You can do this by going to [base64encode.org](https://www.base64encode.org). Paste your privateKey and click on encode.![](<../../.gitbook/assets/googledrive\_encodedPrivateKey (1).png>)\
+    You can do this by going to [base64encode.org](https://www.base64encode.org/). Paste your privateKey and click on encode.![](<../../.gitbook/assets/googledrive\_encodedPrivateKey (1).png>)\
 
 
     \
@@ -45,7 +45,7 @@ This connector can be used to automatically crawl all CSV and Excel files from s
     In your menu bar, you can find **'API & Services' > 'Library'**. On this page you can search for the **Google Drive API** and enable it.\
     ![](../../.gitbook/assets/googledrive\_enableApi2.png)![](../../.gitbook/assets/googledrive\_enableApi.png)\
 
-7.  Go to your [Google Drive](https://drive.google.com) and choose the folders you want to connect. You'll have to share these folders with your Service Account. This is the Service Account email adress you saved earlier.\
+7.  Go to your [Google Drive](https://drive.google.com/) and choose the folders you want to connect. You'll have to share these folders with your Service Account. This is the Service Account email adress you saved earlier.\
     ![](../../.gitbook/assets/googledrive\_shareDrive.png)\
 
 

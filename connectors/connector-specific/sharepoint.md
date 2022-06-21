@@ -6,7 +6,7 @@ This document explains the steps needed to prepare your Sharepoint environment f
 
 ### Step-by-step guide
 
-1. Navigate to [Microsoft Azure Portal](https://portal.azure.com) and log in with a user with Admin permissions.\
+1. Navigate to [Microsoft Azure Portal](https://portal.azure.com/) and log in with a user with Admin permissions.\
 
 2. Register a new app:
 
