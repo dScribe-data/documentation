@@ -1,8 +1,10 @@
 # Table of contents
 
+* [Welcome!](README.md)
+
 ## Configuration
 
-* [Asset Types](README.md)
+* [Asset Types](configuration/asset-types.md)
 * [Properties](configuration/properties.md)
 * [Automation](configuration/automation.md)
 
@@ -16,7 +18,6 @@
 
 ## Connectors
 
-* [Welcome!](<README (2).md>)
 * [Connector Specific](connectors/connector-specific/README.md)
   * [Microsoft Power BI](connectors/connector-specific/microsoft-power-bi.md)
   * [SAP BusinessObjects](connectors/connector-specific/sap-business-objects.md)

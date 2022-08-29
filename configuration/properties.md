@@ -34,4 +34,4 @@ Properties of any of these types can be used to document assets.&#x20;
 
 ## Enabling Properties on Asset Types&#x20;
 
-Each Property can be enabled to any of the asset types in dScribe. Once they have been enabled for an asset type, they can be rearranged in that asset type's layout. See [..](../ "mention").
+Each Property can be enabled to any of the asset types in dScribe. Once they have been enabled for an asset type, they can be rearranged in that asset type's layout. See [asset-types.md](asset-types.md "mention").
