@@ -1,8 +1,14 @@
 # Table of contents
 
+## Configuration
+
+* [Asset Types](README.md)
+* [Properties](configuration/properties.md)
+* [Automation](configuration/automation.md)
+
 ## Security
 
-* [Users](README.md)
+* [Users](<README (1).md>)
 * [Teams](security/teams.md)
 * [Access Policies](security/access-policies.md)
 * [Enterprise Authentication](security/enterprise-authentication/README.md)
@@ -21,7 +27,7 @@
 
 ## API
 
-* [Welcome!](<README (1).md>)
+* [Welcome!](<README (1) (1).md>)
 * [Quick Start](quick-start.md)
 * [Properties](properties.md)
 * [Relations](relations.md)

@@ -17,5 +17,5 @@ Each User can be assigned to one or more Teams.&#x20;
 **Teams and Single Sign-On (SSO)**\
 ****If integration with an external Identity Provider has been set up on your tenant (SSO integration), all users who log in for the first time via SSO will automatically be assigned to a default team. This team is initially called 'Data Citizens', but can be renamed. If available, you can easily recognize this team as the only one which is editable, but not deletable:
 
-![](<../.gitbook/assets/image (14).png>)
+![](<../.gitbook/assets/image (14) (2).png>)
 

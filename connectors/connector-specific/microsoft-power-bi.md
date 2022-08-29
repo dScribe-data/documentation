@@ -34,19 +34,19 @@ For the official documentation by Microsoft, see [here](https://docs.microsoft.c
    ![](<../../.gitbook/assets/image (5).png>)\
 
 4. In your application, navigate to 'Certificates & secrets' and create a new client secret:\
-   ![](<../../.gitbook/assets/image (2).png>)\
+   ![](<../../.gitbook/assets/image (2) (1).png>)\
 
 5. Copy the client secret **value**\
    ****![](<../../.gitbook/assets/image (4) (1).png>)\
 
 6. Go back to Azure Active Directory > Overview and copy the **Tenant ID**\
-   ****![](../../.gitbook/assets/image.png)\
+   ****![](<../../.gitbook/assets/image (15).png>)\
 
 7. Create a new Security Group via Azure portal > Azure Active Directory > Groups (optional: you can choose to reuse an existing group)\
    ![](<../../.gitbook/assets/image (14) (1).png>)\
 
 8. Add your App (see Step 2) as a member of the security group you created\
-   ![](<../../.gitbook/assets/image (8).png>)\
+   ![](<../../.gitbook/assets/image (8) (1).png>)\
 
 9. Navigate to PowerBI via app.powerbi.com and log in with a user with administrator authorizations\
 
@@ -56,10 +56,10 @@ For the official documentation by Microsoft, see [here](https://docs.microsoft.c
 
     b.     Add the security group you created earlier\
     \
-    ![](<../../.gitbook/assets/image (3).png>)\
+    ![](<../../.gitbook/assets/image (3) (1).png>)\
 
 11. While you're here, make sure these settings are applied as well: You can select ‘The entire organization’ or use the same security group as above.\
-    ![](<../../.gitbook/assets/image (10).png>)\
+    ![](<../../.gitbook/assets/image (10) (1).png>)\
 
 12. Using the Tenant ID, Application (client) ID and secret value, create a new Connection in dScribe
 

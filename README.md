@@ -1,17 +1,21 @@
 ---
-description: Managing Users in dScribe
+description: Configuring asset types in dScribe
 ---
 
-# Users
+# Asset Types
 
-Users in dScribe are managed via the Admin portal. Users can be created manually or synchronised with your Identity Provider through Single Sign-On (see [Broken link](broken-reference "mention")).
+Each asset in dScribe is of a specific type. The asset type indicates the purpose of the asset and comes with its own properties and layout settings.
 
-When created manually, each User requires the following information:
+## Properties
 
-* Name
-* Email
-* Password
+The properties configured for each asset type are managed via the Properties page. For more information, see [properties.md](configuration/properties.md "mention").
 
-Upon creation, users do not receive an email. You can share a temporary password or ask them to navigate to your dScribe tenant and click 'Forgot password?' in order to set a personal password.
+## Layout
 
-Note that email addresses need to be unique. No 2 users can exist with the same email address.&#x20;
+Each asset detail page includes a General tab, on which the description of the asset and some key information such as the asset's status is displayed. Below the description field, the Properties configured for the asset type are listed. Properties are always grouped into a **Section**.
+
+Administrators can create additional sections and rearrange the available Properties as desired. For more information, watch the video below:
+
+{% embed url="https://dscribevault.sharepoint.com/:v:/s/TheVault-SupportDesk/ETNyAQ52H5NBuu-FZc5Jm6kBXlN4f2_RYRIYykEajyIrkg?e=exnjUJ" %}
+Learning Video: Configuring the layout of asset types
+{% endembed %}

@@ -1,25 +1,17 @@
-# Welcome!
+---
+description: Managing Users in dScribe
+---
 
-## Welcome to the dScribe API
+# Users
 
-Welcome to the dScribe Graph API! Here you'll find all the documentation you need to get up and running with the dScribe Graph API.
+Users in dScribe are managed via the Admin portal. Users can be created manually or synchronised with your Identity Provider through Single Sign-On (see [Broken link](broken-reference "mention")).
 
-{% hint style="info" %}
-For more details, refer to our [openapi documentation.](https://dscribe-prod-i-app-customerapi.azurewebsites.net/v1/docs/)
-{% endhint %}
+When created manually, each User requires the following information:
 
-## Want to jump right in?
+* Name
+* Email
+* Password
 
-Feeling like an eager beaver? Jump in to the quick start docs and start making your first request within minutes:
+Upon creation, users do not receive an email. You can share a temporary password or ask them to navigate to your dScribe tenant and click 'Forgot password?' in order to set a personal password.
 
-{% content-ref url="quick-start.md" %}
-[quick-start.md](quick-start.md)
-{% endcontent-ref %}
-
-## Want to deep dive?
-
-Dive a little deeper and start exploring our API reference to get an idea of everything that's possible with the API:
-
-{% content-ref url="reference/api-reference/" %}
-[api-reference](reference/api-reference/)
-{% endcontent-ref %}
+Note that email addresses need to be unique. No 2 users can exist with the same email address.&#x20;
