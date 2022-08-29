@@ -31,7 +31,7 @@ For the official documentation by Microsoft, see [here](https://docs.microsoft.c
     TIP 2: (important!) Make sure there are no Power BI admin-consent-required permissions set on this application.\
 
 3. Navigate back to your application via Azure Active Directory > App Registrations > Select your newly created App and copy the **Application (client) ID** somewhere safe. You will need it later.\
-   ![](<../../.gitbook/assets/image (5).png>)\
+   ![](<../../.gitbook/assets/image (5) (1).png>)\
 
 4. In your application, navigate to 'Certificates & secrets' and create a new client secret:\
    ![](<../../.gitbook/assets/image (2) (1).png>)\
@@ -40,7 +40,7 @@ For the official documentation by Microsoft, see [here](https://docs.microsoft.c
    ****![](<../../.gitbook/assets/image (4) (1).png>)\
 
 6. Go back to Azure Active Directory > Overview and copy the **Tenant ID**\
-   ****![](<../../.gitbook/assets/image (15).png>)\
+   ****![](<../../.gitbook/assets/image (3).png>)\
 
 7. Create a new Security Group via Azure portal > Azure Active Directory > Groups (optional: you can choose to reuse an existing group)\
    ![](<../../.gitbook/assets/image (14) (1).png>)\
@@ -59,7 +59,7 @@ For the official documentation by Microsoft, see [here](https://docs.microsoft.c
     ![](<../../.gitbook/assets/image (3) (1).png>)\
 
 11. While you're here, make sure these settings are applied as well: You can select ‘The entire organization’ or use the same security group as above.\
-    ![](<../../.gitbook/assets/image (10) (1).png>)\
+    ![](<../../.gitbook/assets/image (10).png>)\
 
 12. Using the Tenant ID, Application (client) ID and secret value, create a new Connection in dScribe
 
