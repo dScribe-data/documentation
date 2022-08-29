@@ -12,7 +12,7 @@ Automations can be used to:
 * assign a Team to assets
 * restrict the free discovery of assets
 
-Automations are defined in dScribe in the Admin Portal > Automation.
+Automations can be managed in the **Admin Portal > Automation**.
 
 ## Defining an automation
 

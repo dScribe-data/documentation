@@ -6,6 +6,8 @@ description: Configuring Properties in dScribe
 
 Properties can be used to introduce concepts specific to your organization into dScribe. They are used to enrich the documentation of assets, facilitate filtering and support granular access policies.
 
+Properties can be managed via the **Admin Portal > Properties**.
+
 ## Property Types
 
 ### Properties of type Dropdown

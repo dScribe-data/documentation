@@ -6,6 +6,8 @@ description: Configuring asset types in dScribe
 
 Each asset in dScribe is of a specific type. The asset type indicates the purpose of the asset and comes with its own properties and layout settings.
 
+Asset Types can be managed in the **Admin Portal > Asset Types**.
+
 ## Properties
 
 The properties configured for each asset type are managed via the Properties page. For more information, see [properties.md](properties.md "mention").
