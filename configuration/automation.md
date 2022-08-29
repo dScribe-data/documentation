@@ -6,11 +6,11 @@ description: Managing automations in dScribe
 
 Don't want to manually document every asset in dScribe? We feel you! While some documentation and governance efforts will always require human contributions, you can save yourself from a lot of the manual work by leveraging automations in dScribe.&#x20;
 
-Automations can be used to:
+Automations can be used to automatically:
 
 * assign Property values to assets&#x20;
-* assign a Team to assets
-* restrict the free discovery of assets
+* assign Teams to assets
+* restrict the discovery of assets
 
 Automations can be managed in the **Admin Portal > Automation**.
 
