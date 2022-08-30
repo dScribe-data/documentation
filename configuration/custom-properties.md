@@ -1,14 +1,16 @@
 ---
-description: Configuring Properties in dScribe
+description: Configuring custom properties in dScribe
 ---
 
-# Properties
+# Custom Properties
 
-Properties can be used to introduce concepts specific to your organization into dScribe. They are used to enrich the documentation of assets, facilitate filtering and support granular access policies.
+Custom properties can be used to introduce concepts specific to your organization into dScribe. They are used to further enrich the documentation of assets, facilitate filtering and support granular access policies.
 
-Properties can be managed via the **Admin Portal > Properties**.
+Custom properties can be managed via the **Admin Portal > Properties**.
 
 ## Property Types
+
+Each property is of a specific type, defining its behaviour and available options. &#x20;
 
 ### Properties of type Dropdown
 
@@ -36,4 +38,4 @@ Properties of any of these types can be used to document assets.&#x20;
 
 ## Enabling Properties on Asset Types&#x20;
 
-Each Property can be enabled to any of the asset types in dScribe. Once they have been enabled for an asset type, they can be rearranged in that asset type's layout. See [asset-types.md](asset-types.md "mention").
+Each custom property can be linked to any of the asset types in dScribe. Once they have been linked to an asset type, they can be rearranged in that asset type's layout. See [asset-types.md](asset-types.md "mention") >[#layout](asset-types.md#layout "mention").

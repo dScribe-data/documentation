@@ -1,10 +1,10 @@
 ---
-description: >-
-  This document explains the steps needed to login with Azure AD into the
-  dScribe application.
+description: Setting up Single Sign-On (SSO) with Azure Active Directory
 ---
 
 # Azure AD
+
+This document explains the steps needed to enable Single Sign-On into dScribe via Azure AD.
 
 ### 1. Go to Azure Active Directory (AAD)
 

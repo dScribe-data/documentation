@@ -5,7 +5,7 @@
 ## Configuration
 
 * [Asset Types](configuration/asset-types.md)
-* [Properties](configuration/properties.md)
+* [Custom Properties](configuration/custom-properties.md)
 * [Automation](configuration/automation.md)
 
 ## Security
