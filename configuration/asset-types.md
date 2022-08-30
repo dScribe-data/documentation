@@ -74,6 +74,6 @@ Each asset detail page includes a General tab, on which the description of the a
 
 Administrators can create additional sections and rearrange the linked Custom Properties as desired. For more information, watch the video below:
 
-{% embed url="https://dscribevault.sharepoint.com/:v:/s/TheVault-SupportDesk/ETNyAQ52H5NBuu-FZc5Jm6kBXlN4f2_RYRIYykEajyIrkg?e=exnjUJ" %}
+{% embed url="https://www.youtube.com/watch?v=MpS4UdPDO7E" %}
 Learning Video: Configuring the layout of asset types
 {% endembed %}

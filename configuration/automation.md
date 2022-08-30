@@ -14,6 +14,12 @@ Automations can be used to automatically:
 
 Automations can be managed in the **Admin Portal > Automation**.
 
+The following video gives a quick introduction into the Automations functionality:
+
+{% embed url="https://www.youtube.com/watch?v=MpFVPd6BhQA" %}
+Learning Video: Creating Automations
+{% endembed %}
+
 ## Defining an automation
 
 ### When and Then statements
