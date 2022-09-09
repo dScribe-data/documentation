@@ -1,3 +1,7 @@
+---
+layout: landing
+---
+
 # Welcome!
 
 Welcome to the dScribe documentation portal!&#x20;
