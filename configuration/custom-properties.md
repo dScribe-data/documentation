@@ -36,6 +36,32 @@ Includes the following property types:
 
 Properties of any of these types can be used to document assets.&#x20;
 
+## Mandatory Properties
+
+By setting a property as required, this input field will always need to be filled in on asset types where the property is present. Specifically:
+
+* when creating a new asset
+* when editing a crawled asset where the property is not yet filled in
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Setting a custom property as mandatory</p></figcaption></figure>
+
+{% hint style="warning" %}
+We of course want the documentation on each asset in dScribe to be as complete as possible. However, it is often a bad idea to force properties to be filled in via this setting for the following two reasons:
+
+* It increases the hurdle for users to contribute to your documentation. The more mandatory input fields, the more work it becomes to add something to dScribe.
+* It increases the risk of inaccurate documentation. Users who do not know the correct value for a mandatory input field will often pick a wrong value to be able to continue.   &#x20;
+{% endhint %}
+
+## Security-enabled Properties
+
+If you would like to use a custom property as context for your authorization model, you can set that property as security enabled:
+
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Setting a property as security-enabled</p></figcaption></figure>
+
+&#x20;Doing so will make that property available in when defining Contribution Policies:
+
+<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption><p>Using a security-enabled property to define the context of a Contribution Policy</p></figcaption></figure>
+
 ## Enabling Properties on Asset Types&#x20;
 
 Each custom property can be linked to any of the asset types in dScribe. Once they have been linked to an asset type, they can be rearranged in that asset type's layout. See [asset-types.md](asset-types.md "mention") >[#layout](asset-types.md#layout "mention").

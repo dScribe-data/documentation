@@ -31,7 +31,7 @@ For the official documentation by Microsoft, see [here](https://docs.microsoft.c
     TIP 2: (important!) Make sure there are no Power BI admin-consent-required permissions set on this application.\
 
 3. Navigate back to your application via Azure Active Directory > App Registrations > Select your newly created App and copy the **Application (client) ID** somewhere safe. You will need it later.\
-   ![](<../../.gitbook/assets/image (5).png>)\
+   ![](<../../.gitbook/assets/image (5) (1).png>)\
 
 4. In your application, navigate to 'Certificates & secrets' and create a new client secret:\
    ![](<../../.gitbook/assets/image (2) (1).png>)\
