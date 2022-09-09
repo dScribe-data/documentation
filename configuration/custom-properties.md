@@ -64,6 +64,6 @@ If you would like to use a custom property as context for your authorization mod
 
 Note that only properties of type dropdown can be security-enabled.
 
-## Enabling Properties on Asset Types&#x20;
+## Rearranging custom properties per Asset Type&#x20;
 
 Each custom property can be linked to any of the asset types in dScribe. Once they have been linked to an asset type, they can be rearranged in that asset type's layout. See [#layout](asset-types.md#layout "mention").
