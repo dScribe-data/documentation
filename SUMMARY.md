@@ -28,7 +28,7 @@
 
 ## API
 
-* [Welcome!](<README (1) (1).md>)
+* [Intro](api/intro.md)
 * [Quick Start](quick-start.md)
 * [Properties](properties.md)
 * [Relations](relations.md)

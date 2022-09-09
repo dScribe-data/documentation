@@ -1,4 +1,4 @@
-# Welcome!
+# Intro
 
 ## Welcome to the dScribe API
 
@@ -12,14 +12,14 @@ For more details, refer to our [openapi documentation.](https://dscribe-prod-i-a
 
 Feeling like an eager beaver? Jump in to the quick start docs and start making your first request within minutes:
 
-{% content-ref url="quick-start.md" %}
-[quick-start.md](quick-start.md)
+{% content-ref url="../quick-start.md" %}
+[quick-start.md](../quick-start.md)
 {% endcontent-ref %}
 
 ## Want to deep dive?
 
 Dive a little deeper and start exploring our API reference to get an idea of everything that's possible with the API:
 
-{% content-ref url="reference/api-reference/" %}
-[api-reference](reference/api-reference/)
+{% content-ref url="../reference/api-reference/" %}
+[api-reference](../reference/api-reference/)
 {% endcontent-ref %}
