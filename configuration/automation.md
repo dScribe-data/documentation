@@ -55,6 +55,22 @@ With a RegEx match, you can determine more complex text matches. For example, a 
 
 RegEx expressions might take some getting used to. A good introduction can be found [here](https://regexone.com/). To test out your own RegEx expressions, you could use [this tool](https://regex101.com/).
 
+<details>
+
+<summary>RegEx Cheat Sheet</summary>
+
+.    --> Any single character                    --> Example: _C.stomer_ to match "Customer"
+
+.\*  --> Any number of characters           --> Example: _C.\*mer_ to match "Customer"
+
+^   --> Starting with...                              --> Example: _^Cust_ to match "Customer"
+
+$   --> Ending with...                                --> Example: _omer$_ to match "Customer"
+
+\    --> Treat a special character as text --> Example: \\\[Development\\] to match "\[Development]"&#x20;
+
+</details>
+
 ## Automation Status
 
 Each automation can be set to State = Active or Inactive. Automations with State = Inactive will not run until they are set to Active.
