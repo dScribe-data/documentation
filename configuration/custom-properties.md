@@ -56,11 +56,13 @@ We of course want the documentation on each asset in dScribe to be as complete a
 
 If you would like to use a custom property as context for your authorization model, you can set that property as security enabled:
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Setting a property as security-enabled</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (2).png" alt=""><figcaption><p>Setting a property as security-enabled</p></figcaption></figure>
 
-&#x20;Doing so will make that property available in when defining Contribution Policies:
+&#x20;Doing so will make that property available when defining Contribution Policies:
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption><p>Using a security-enabled property to define the context of a Contribution Policy</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Using a security-enabled property to define the context of a Contribution Policy</p></figcaption></figure>
+
+In the example above, users receive Create+Edit+Delete permissions on all asset types where Subject Area = _Unassigned_ or 'Sales'.
 
 Note that only properties of type dropdown can be security-enabled.
 

@@ -34,7 +34,7 @@ For the official documentation by Microsoft, see [here](https://docs.microsoft.c
    ![](<../../.gitbook/assets/image (5) (1).png>)\
 
 4. In your application, navigate to 'Certificates & secrets' and create a new client secret:\
-   ![](<../../.gitbook/assets/image (2) (1).png>)\
+   ![](<../../.gitbook/assets/image (2) (1) (1).png>)\
 
 5. Copy the client secret **value**\
    ****![](<../../.gitbook/assets/image (4) (1) (1).png>)\
