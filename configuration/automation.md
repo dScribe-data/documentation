@@ -67,7 +67,8 @@ RegEx expressions might take some getting used to. A good introduction can be fo
 
 $   --> Ending with...                                --> Example: _omer$_ to match "Customer"
 
-\    --> Treat a special character as text --> Example: \\\[Development\\] to match "\[Development]"&#x20;
+\    --> Treat a special character as text --> Example: \\\[Development\\] to match \
+&#x20;                                                                       "\[Development]"&#x20;
 
 </details>
 
