@@ -53,7 +53,7 @@ An exact match will always look for a precise, capital-sensitive text match. Any
 With a RegEx match, you can determine more complex text matches. For example, a wildcard can be included with the characters <mark style="color:orange;">**.\***</mark>. The automation below will execute for all assets stored under the Ancester Path "Public / Finance" + any subfolders + any other folders under "Public" that start with "Finance":\
 ![](<../.gitbook/assets/image (3) (2).png>)
 
-RegEx expressions might take some getting used to. A good introduction can be found [here](https://regexone.com/).
+RegEx expressions might take some getting used to. A good introduction can be found [here](https://regexone.com/). To test out your own RegEx expressions, you could use [this tool](https://regex101.com/).
 
 ## Automation Status
 
