@@ -43,7 +43,7 @@ By setting a property as required, this input field will always need to be fille
 * when creating a new asset
 * when editing a crawled asset where the property is not yet filled in
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Setting a custom property as mandatory</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (2).png" alt=""><figcaption><p>Setting a custom property as mandatory</p></figcaption></figure>
 
 {% hint style="warning" %}
 We of course want the documentation on each asset in dScribe to be as complete as possible. However, it is often a bad idea to force properties to be filled in via this setting for the following two reasons:
@@ -56,13 +56,13 @@ We of course want the documentation on each asset in dScribe to be as complete a
 
 If you would like to use a custom property as context for your authorization model, you can set that property as security enabled:
 
-<figure><img src="../.gitbook/assets/image (5) (2).png" alt=""><figcaption><p>Setting a property as security-enabled</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Setting a property as security-enabled</p></figcaption></figure>
 
 &#x20;Doing so will make that property available when defining Contribution Policies:
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Using a security-enabled property to define the context of a Contribution Policy</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Using a security-enabled property to define the context of a Contribution Policy</p></figcaption></figure>
 
-In the example above, users receive Create+Edit+Delete permissions on all asset types where Subject Area = _Unassigned_ or 'Sales'.
+In the example above, users receive Create+Edit+Delete permissions on all asset types where Subject Area = 'Sales' or is still _Unassigned_.
 
 Note that only properties of type dropdown can be security-enabled.
 
