@@ -25,6 +25,7 @@
   * [BigQuery](connectors/connector-specific/bigquery.md)
   * [Google Drive](connectors/connector-specific/google-drive.md)
   * [Snowflake](connectors/connector-specific/snowflake.md)
+  * [SAP Business Warehouse (BW) on HANA or BW4/HANA](connectors/connector-specific/sap-business-warehouse-bw-on-hana-or-bw4-hana.md)
 
 ## API
 
