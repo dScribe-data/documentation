@@ -40,13 +40,13 @@ For the official documentation by Microsoft, see [here](https://docs.microsoft.c
    ****![](<../../.gitbook/assets/image (4) (1) (1).png>)\
 
 6. Go back to Azure Active Directory > Overview and copy the **Tenant ID**\
-   ****![](<../../.gitbook/assets/image (15) (1).png>)\
+   ****![](<../../.gitbook/assets/image (15).png>)\
 
 7. Create a new Security Group via Azure portal > Azure Active Directory > Groups (optional: you can choose to reuse an existing group)\
    ![](<../../.gitbook/assets/image (14) (1).png>)\
 
 8. Add your App (see Step 2) as a member of the security group you created\
-   ![](<../../.gitbook/assets/image (8) (1).png>)\
+   ![](<../../.gitbook/assets/image (8) (1) (1).png>)\
 
 9. Navigate to PowerBI via app.powerbi.com and log in with a user with administrator authorizations\
 

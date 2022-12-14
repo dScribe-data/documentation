@@ -8,8 +8,8 @@ Don't want to manually document every asset in dScribe? We feel you! While some 
 
 Automations can be used to automatically:
 
-* assign Property values to assets&#x20;
-* assign Teams to assets
+* assign custom property values to assets&#x20;
+* assign owners to assets
 * restrict the discovery of assets
 
 Automations can be managed in the **Admin Portal > Automation**.
@@ -51,7 +51,7 @@ An exact match will always look for a precise, capital-sensitive text match. Any
 #### RegEx match
 
 With a RegEx match, you can determine more complex text matches. For example, a wildcard can be included with the characters <mark style="color:orange;">**.\***</mark>. The automation below will execute for all assets stored under the Ancester Path "Public/Finance" + any subfolders + any other folders under "Public" that start with "Finance". Pay attention though, in RegEx expressions, special characters that should be treated as literal text matches, should be preceded by a <mark style="color:orange;">**\\**</mark>.\
-![](<../.gitbook/assets/image (2).png>)
+![](<../.gitbook/assets/image (3).png>)
 
 RegEx expressions might take some getting used to. A good introduction can be found [here](https://regexone.com/). To test out your own RegEx expressions, you could use [this tool](https://regex101.com/).
 
@@ -80,6 +80,6 @@ Each automation can be set to State = Active or Inactive. Automations with State
 
 The example below shows an automation that will automatically set the Property Domain to 'Finance' for any newly created reports or datasets coming from Source 'SAP Analytics Cloud reporting' and stored under the folder 'Public/Finance/':
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 &#x20;
