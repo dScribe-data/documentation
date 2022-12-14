@@ -41,19 +41,17 @@ Via this file based connector, all SAP BW queries available in a SAP BW client c
 
 </details>
 
-## TECHNICAL SETUP
+This connector works with both SAP BWonHANA and SAP BW/4HANA systems.
 
-This setup applies to both SAP BWonHANA and SAP BW/4HANA systems.
+Due to licensing constraints, you typically cannot read data directly from the underlying BW database. To obtain the required information, an extraction program can be installed to consolidate the needed information into a metadata file in CSV format. This metadata file can then be loaded into dScribe.
 
-Due to licensing constraints, dScribe cannot read directly from the underlying BW database. To anyhow obtain the required information, an extraction program can be installed to consolidate the needed information into a CSV file. The output file can then be loaded into dScribe.
-
-As this program is dScribe specific, the following steps need to be run through in order for the CSV file to be made available.
+## Installing the BW extraction program
 
 {% file src="../../.gitbook/assets/dScribe - BW Extractor program(s)_240822.zip" %}
 BW extractor zip file
 {% endfile %}
 
-The zip file contains 2 files that will have to be made available on the corresponding BW repositories:
+The above zip file contains 2 files that need to be imported on the corresponding BW repositories:
 
 ·         **K907593.B4D** -> needs to be transferred to folder: /usr/sap/trans/cofiles
 
@@ -61,7 +59,7 @@ The zip file contains 2 files that will have to be made available on the corresp
 
 <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Custom program to upload BW extractor program</p></figcaption></figure>
 
-The import can be performed by either a FTP tool used, or by e.g. a custom program with the example code below:
+The import can be performed via an FTP tool used or via a custom program. In case you prefer to write a custom program, see for example the code below:
 
 <details>
 
@@ -121,7 +119,7 @@ ENDIF.
 
 </details>
 
-Via STMS the K907593.B4D transport request can be added via:
+Via STMS the transport request for K907593.B4D can be added:
 
 <figure><img src="../../.gitbook/assets/Import transport files2.png" alt=""><figcaption></figcaption></figure>
 
@@ -129,11 +127,11 @@ Via STMS the K907593.B4D transport request can be added via:
 
 The transport request will be added to the queue, now you can select and import it to your system.
 
-## Running the program
+## Running the BW extraction program
 
 The following program should now be available: ZBW\_EXP\_QUERY\_INFO\_V3
 
-&#x20;This can be run via transaction: SE38 in (background)
+&#x20;This can be run via transaction SE38 (the extraction will run in the background)
 
 <figure><img src="../../.gitbook/assets/Import transport files4.png" alt=""><figcaption></figcaption></figure>
 
@@ -143,23 +141,23 @@ The following program should now be available: ZBW\_EXP\_QUERY\_INFO\_V3
 
 <figure><img src="../../.gitbook/assets/Import transport files6.png" alt=""><figcaption></figcaption></figure>
 
-Additionally, the output file is created (and visible via TA AL11 in the directory as defined when running the program)
+Additionally, the metadata file will be created. You can access it via TA AL11 in the directory as defined when running the program.
 
 <figure><img src="../../.gitbook/assets/Picture12.jpg" alt=""><figcaption></figcaption></figure>
 
 Good to know:
 
-1. The formatting of the file will always be as per above ‘queries\[date].csv&#x20;
+1. The metadata file will always be named ‘queries\[_date_].csv'&#x20;
 2. To schedule the program to run frequently, we recommend foreseeing the program in a process chain and thus integrating this in an already existing batch job.
 
-## Downloading the file to a server or as a local file
+## Downloading the metadata file
 
-To download the file, the following program should be run: **ZBW\_EXP\_QUERY\_FILE**
+Once generated, you can download the metadata file from BW into a server or as a local file. To do this, you can run the following program: **ZBW\_EXP\_QUERY\_FILE**
 
 <figure><img src="../../.gitbook/assets/Import transport files8.png" alt=""><figcaption><p>SE38: <strong>ZBW_EXP_QUERY_FILE</strong></p></figcaption></figure>
 
-## Upload CSV file into dScribe
+## Uploading the extracted file into dScribe
 
-The file can now be uploaded into dScribe via Admin Portal > Sources > your BW source:
+The metadata file can now be uploaded into dScribe via Admin Portal > Sources > your BW source:
 
 <figure><img src="../../.gitbook/assets/Upload BW in dScribe1.png" alt=""><figcaption></figcaption></figure>
