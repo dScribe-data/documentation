@@ -47,11 +47,9 @@ Due to licensing constraints, you typically cannot read data directly from the u
 
 ## Installing the BW extraction program
 
-{% file src="../../.gitbook/assets/dScribe - BW Extractor program(s)_240822.zip" %}
-BW extractor zip file
-{% endfile %}
+To obtain the extraction BW file, please contact us: [support@dscribedata.com](mailto:support@dscribedata.com)&#x20;
 
-The above zip file contains 2 files that need to be imported on the corresponding BW repositories:
+The zip file contains 2 files that need to be imported on the corresponding BW repositories:
 
 ·         **K907593.B4D** -> needs to be transferred to folder: /usr/sap/trans/cofiles
 
@@ -160,4 +158,14 @@ Once generated, you can download the metadata file from BW into a server or as a
 
 The metadata file can now be uploaded into dScribe via Admin Portal > Sources > your BW source:
 
-<figure><img src="../../.gitbook/assets/Upload BW in dScribe1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/sources 1.png" alt=""><figcaption><p>Sources</p></figcaption></figure>
+
+Once the BW source system is selected, the extraction file can be uploaded by clicking on "Add file". The job will automatically start.&#x20;
+
+<figure><img src="../../.gitbook/assets/sources2.png" alt=""><figcaption><p>CSV upload screen</p></figcaption></figure>
+
+**Remark:** the duration of the upload will depend on the actual size of the file.&#x20;
+
+Once executed, the load can be followed up via the below logging.
+
+<figure><img src="../../.gitbook/assets/sources 4.png" alt=""><figcaption></figcaption></figure>
