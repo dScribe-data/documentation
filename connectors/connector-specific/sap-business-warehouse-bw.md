@@ -12,7 +12,7 @@ description: >-
 
 Via this file based connector, all SAP BW queries available in a SAP BW client can be automatically cataloged, including information on which InfoProvider these are built.
 
-&#x20;The following metadata is retrieved per BW Query: (in bold indicated the fields made visible in dScribe). Some of the fields are not used but are made available as per standard output by SAP.
+The following metadata is retrieved per BW Query: (in bold indicated the fields made visible in dScribe). Some of the fields are not used but are made available as per standard output by SAP.
 
 * **MAPNAME**: the technical name of the BW query
 * NODE\_KEY: L1 hierarchy
@@ -47,7 +47,7 @@ Due to licensing constraints, you typically cannot read data directly from the u
 
 ## Installing the BW extraction program
 
-To obtain the extraction BW file, please contact us: [support@dscribedata.com](mailto:support@dscribedata.com)&#x20;
+To obtain the extraction BW program, please contact us: [support@dscribedata.com](mailto:support@dscribedata.com)&#x20;
 
 The zip file contains 2 files that need to be imported on the corresponding BW repositories:
 
