@@ -55,7 +55,7 @@ The zip file contains 2 files that need to be imported on the corresponding BW r
 
 ·         **R907593.B4D** -> needs to be transferred to folder: /usr/sap/trans/data
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Custom program to upload BW extractor program</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (4).png" alt=""><figcaption><p>Custom program to upload BW extractor program</p></figcaption></figure>
 
 The import can be performed via an FTP tool used or via a custom program. In case you prefer to write a custom program, see for example the code below:
 

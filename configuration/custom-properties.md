@@ -60,7 +60,7 @@ If you would like to use a custom property as context for your authorization mod
 
 &#x20;Doing so will make that property available when defining Contribution Policies:
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Using a security-enabled property to define the context of a Contribution Policy</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (2).png" alt=""><figcaption><p>Using a security-enabled property to define the context of a Contribution Policy</p></figcaption></figure>
 
 In the example above, users receive Create+Edit+Delete permissions on all asset types where Subject Area = 'Sales' or is still _Unassigned_.
 

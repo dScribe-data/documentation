@@ -40,7 +40,7 @@ For the official documentation by Microsoft, see [here](https://docs.microsoft.c
    ****![](<../../.gitbook/assets/image (4) (1) (1).png>)\
 
 6. Go back to Azure Active Directory > Overview and copy the **Tenant ID**\
-   ****![](<../../.gitbook/assets/image (15).png>)\
+   ****![](<../../.gitbook/assets/image (15) (1).png>)\
 
 7. Create a new Security Group via Azure portal > Azure Active Directory > Groups (optional: you can choose to reuse an existing group)\
    ![](<../../.gitbook/assets/image (14) (1).png>)\
