@@ -168,4 +168,4 @@ Once the BW source system is selected, the extraction file can be uploaded by cl
 
 Once executed, the load can be followed up via the below logging.
 
-<figure><img src="../../.gitbook/assets/sources 4.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/sources 4.png" alt=""><figcaption><p>Follow up of dataload</p></figcaption></figure>
