@@ -32,7 +32,6 @@
 * [Intro](api/intro.md)
 * [Quick Start](quick-start.md)
 * [Properties](properties.md)
-* [Relations](relations.md)
 * [Examples](examples/list/README.md)
   * [List based on ID](examples/list/list-based-on-id.md)
   * [List based on filters](examples/list/list-based-on-filters.md)

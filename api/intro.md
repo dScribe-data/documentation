@@ -2,11 +2,7 @@
 
 ## Welcome to the dScribe API
 
-Welcome to the dScribe Graph API! Here you'll find all the documentation you need to get up and running with the dScribe Graph API.
-
-{% hint style="info" %}
-For more details, refer to our [openapi documentation.](https://dscribe-prod-i-app-customerapi.azurewebsites.net/v1/docs/)
-{% endhint %}
+Welcome to the dScribe API! Here you'll find all the documentation you need to get up and running with the dScribe API.
 
 ## Want to jump right in?
 

@@ -2,8 +2,8 @@
 
 In the following example, we will do a request to the following endpoints:
 
-{% swagger src="../../.gitbook/assets/openapi (5).yaml" path="/dataset/list" method="post" %}
-[openapi (5).yaml](<../../.gitbook/assets/openapi (5).yaml>)
+{% swagger src="../../.gitbook/assets/openapi (4).yaml" path="/dataset/list" method="post" %}
+[openapi (4).yaml](<../../.gitbook/assets/openapi (4).yaml>)
 {% endswagger %}
 
 {% hint style="info" %}
@@ -15,9 +15,9 @@ To get a single ID, you can use the following request:
 ```json
 {
   "where": {
-    "VIEWID": "ID1",
+    "DATASETID": "ID1",
     # OR
-    "VIEWID_IN": [
+    "DATASETID_IN": [
       "ID1"
     ]
   }
@@ -31,11 +31,11 @@ To get multiple IDs, do the following:
   "limit": 50,
   "skip": 0,
   "where": {
-    "VIEWID_NOT": "ID1", # list all IDs except this one
+    "DATASETID_NOT": "ID1", # list all IDs except this one
     # OR
-    "VIEWID_NOT_IN": ["ID1", "ID2"], # list all IDs except these
+    "DATASETID_NOT_IN": ["ID1", "ID2"], # list all IDs except these
     # OR
-    "VIEWID_IN": [
+    "DATASETID_IN": [
       "ID1",
       "ID2"
     ]

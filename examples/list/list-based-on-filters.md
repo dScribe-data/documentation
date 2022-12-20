@@ -2,8 +2,8 @@
 
 In the following example, we will do a request to the following endpoints:
 
-{% swagger src="../../.gitbook/assets/openapi (5).yaml" path="/dataset/list" method="post" %}
-[openapi (5).yaml](<../../.gitbook/assets/openapi (5).yaml>)
+{% swagger src="../../.gitbook/assets/openapi (4).yaml" path="/dataset/list" method="post" %}
+[openapi (4).yaml](<../../.gitbook/assets/openapi (4).yaml>)
 {% endswagger %}
 
 {% hint style="info" %}
