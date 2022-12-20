@@ -1,106 +1,15 @@
-openapi: 3.0.3
+openapi: '3.0.3'
 info:
-  description: This API can be used to interact with the dScribe Graph. It exposes CRUD operations for all the major objects like METRICs, Attributes, Data Assets and Dataset Elements.
-  version: 1.0.0
-  title: dScribe Data Catalog API
-  termsOfService: https://dscribedata.com/terms/
+  description: 'This API can be used to interact with the dScribe Graph. It exposes CRUD operations for all the major objects like KPIs, Attributes, Data Assets and Dataset Elements.'
+  version: '1.0.0'
+  title: 'dScribe Data Catalog API'
+  termsOfService: 'https://dscribedata.com/terms/'
   contact:
-    email: support@dscribedata.com
+    email: 'support@dscribedata.com'
 servers:
-  - url: https://{your_tenant}.dscribedata.com/api
-    description: Production API server of dScribe
+  - url: 'https://{your_tenant}.dscribedata.com/api'
+    description: 'Production API server of dScribe'
 paths:
-  /metric/list:
-    summary: Represents a Metric within dScribe
-    post:
-      tags:
-        - Metric
-      requestBody:
-        $ref: '#/components/requestBodies/ListBody'
-      responses:
-        '200':
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  metadata:
-                    $ref: '#/components/schemas/Metadata'
-                  results:
-                    type: array
-                    items:
-                      allOf:
-                        - type: object
-                          required:
-                            - METRICID
-                          properties:
-                            METRICID:
-                              type: string
-                        - $ref: '#/components/schemas/REPORTNoConnectDisconnect'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
-      externalDocs:
-        description: Learn more about a Reports.
-        url: https://documentation.dscribedata.com/reports
-  /metric/create:
-    summary: Represents a Metric within dScribe
-    post:
-      tags:
-        - Metric
-      requestBody:
-        $ref: '#/components/requestBodies/CreateReportBody'
-      responses:
-        '200':
-          $ref: '#/components/responses/SuccessPostPutDelete'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
-  /metric/update:
-    summary: Represents a Metric within dScribe
-    post:
-      tags:
-        - Metric
-      requestBody:
-        $ref: '#/components/requestBodies/UpdateMetricBody'
-      responses:
-        '200':
-          $ref: '#/components/responses/SuccessPostPutDelete'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
-      externalDocs:
-        description: Learn more about a Report.
-        url: https://documentation.dscribedata.com/reports
-  /metric/delete:
-    summary: Represents a Metric within dScribe
-    post:
-      tags:
-        - Metric
-      requestBody:
-        $ref: '#/components/requestBodies/DeleteBody'
-      responses:
-        '200':
-          $ref: '#/components/responses/SuccessPostPutDelete'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
-      externalDocs:
-        description: Learn more about a Report.
-        url: https://documentation.dscribedata.com/reports
   /report/list:
     summary: Represents a Report within dScribe
     post:
@@ -215,11 +124,11 @@ paths:
                       allOf:
                         - type: object
                           required:
-                            - METRICID
+                            - KPIID
                           properties:
-                            METRICID:
+                            KPIID:
                               type: string
-                        - $ref: '#/components/schemas/DATASETNoConnectDisconnect'
+                        - $ref: '#/components/schemas/VIEWNoConnectDisconnect'
         '401':
           $ref: '#/components/responses/Unauthorized'
         '404':
@@ -235,7 +144,7 @@ paths:
       tags:
         - Data Asset
       requestBody:
-        $ref: '#/components/requestBodies/CreateDatasetBody'
+        $ref: '#/components/requestBodies/CreateViewBody'
       responses:
         '200':
           $ref: '#/components/responses/SuccessPostPutDelete'
@@ -251,7 +160,7 @@ paths:
       tags:
         - Data Asset
       requestBody:
-        $ref: '#/components/requestBodies/UpdateDatasetBody'
+        $ref: '#/components/requestBodies/UpdateViewBody'
       responses:
         '200':
           $ref: '#/components/responses/SuccessPostPutDelete'
@@ -284,10 +193,10 @@ paths:
         description: Learn more about a Data Asset.
         url: https://documentation.dscribedata.com/data-assets
   /dse/list:
-    summary: Represents a Dse within dScribe
+    summary: Represents a Column within dScribe
     post:
       tags:
-        - Dse
+        - Column
       requestBody:
         $ref: '#/components/requestBodies/ListBody'
       responses:
@@ -306,11 +215,11 @@ paths:
                       allOf:
                         - type: object
                           required:
-                            - DSEID
+                            - KPIID
                           properties:
-                            METRICID:
+                            KPIID:
                               type: string
-                        - $ref: '#/components/schemas/DSE'
+                        - $ref: '#/components/schemas/COLUMN'
         '401':
           $ref: '#/components/responses/Unauthorized'
         '404':
@@ -318,15 +227,15 @@ paths:
         '500':
           $ref: '#/components/responses/InternalServerError'
       externalDocs:
-        description: Learn more about a Dse.
+        description: Learn more about a Column.
         url: https://documentation.dscribedata.com/dse
   /dse/create:
-    summary: Represents a Dse within dScribe
+    summary: Represents a Column within dScribe
     post:
       tags:
-        - Dse
+        - Column
       requestBody:
-        $ref: '#/components/requestBodies/CreateDseBody'
+        $ref: '#/components/requestBodies/CreateColumnBody'
       responses:
         '200':
           $ref: '#/components/responses/SuccessPostPutDelete'
@@ -337,12 +246,12 @@ paths:
         '500':
           $ref: '#/components/responses/InternalServerError'
   /dse/update:
-    summary: Represents a Dse within dScribe
+    summary: Represents a Column within dScribe
     post:
       tags:
-        - Dse
+        - Column
       requestBody:
-        $ref: '#/components/requestBodies/UpdateDseBody'
+        $ref: '#/components/requestBodies/UpdateColumnBody'
       responses:
         '200':
           $ref: '#/components/responses/SuccessPostPutDelete'
@@ -353,13 +262,13 @@ paths:
         '500':
           $ref: '#/components/responses/InternalServerError'
       externalDocs:
-        description: Learn more about a Dse.
+        description: Learn more about a Column.
         url: https://documentation.dscribedata.com/dse
   /dse/delete:
-    summary: Represents a Dse within dScribe
+    summary: Represents a Column within dScribe
     post:
       tags:
-        - Dse
+        - Column
       requestBody:
         $ref: '#/components/requestBodies/DeleteBody'
       responses:
@@ -372,37 +281,12 @@ paths:
         '500':
           $ref: '#/components/responses/InternalServerError'
       externalDocs:
-        description: Learn more about a Dse.
+        description: Learn more about a Column.
         url: https://documentation.dscribedata.com/dse
 security:
   - bearerAuth: []
 components:
   requestBodies:
-    UpdateMetricBody:
-      description: Update Metric body. When it comes to properties, only existing properties can be updated with a valid value that has been created in the admin portal of the app.
-      required: true
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              allOf:
-                - type: object
-                  required:
-                    - METRICID
-                  properties:
-                    METRICID:
-                      type: string
-                    NAME:
-                      type: string
-                    PROPERTIES:
-                      type: object
-                      properties:
-                        '{readable_id}':
-                          type: array
-                          description: The readable_id as defined in the portal with an array of values
-                          items:
-                            type: string
     UpdateReportBody:
       description: Update Report body. When it comes to properties, only existing properties can be updated with a valid value that has been created in the admin portal of the app.
       required: true
@@ -418,33 +302,9 @@ components:
                   properties:
                     REPORTID:
                       type: string
-                    NAME:
-                      type: string
-                    PROPERTIES:
-                      type: object
-                      properties:
-                        '{readable_id}':
-                          type: array
-                          description: The readable_id as defined in the portal with an array of values
-                          items:
-                            type: string
-                    SOURCE_PROPERTIES:
-                      type: object
-                      properties:
-                        CLASSIFICATION:
-                          type: string
-                        TYPE:
-                          type: string
-                        UPDATEDON:
-                          type: string
-                        UPDATEDBY:
-                          type: string
-                        CREATEDON:
-                          type: string
-                        CREATEDBY:
-                          type: string
-    UpdateDatasetBody:
-      description: Update Dataset body. When it comes to properties, only existing properties can be updated with a valid value that has been created in the admin portal of the app.
+                - $ref: '#/components/schemas/REPORT'
+    UpdateViewBody:
+      description: Update View body. When it comes to properties, only existing properties can be updated with a valid value that has been created in the admin portal of the app.
       required: true
       content:
         application/json:
@@ -454,37 +314,13 @@ components:
               allOf:
                 - type: object
                   required:
-                    - DATASETID
+                    - VIEWID
                   properties:
-                    DATASETID:
+                    VIEWID:
                       type: string
-                    NAME:
-                      type: string
-                    PROPERTIES:
-                      type: object
-                      properties:
-                        '{readable_id}':
-                          type: array
-                          description: The readable_id as defined in the portal with an array of values
-                          items:
-                            type: string
-                    SOURCE_PROPERTIES:
-                      type: object
-                      properties:
-                        CLASSIFICATION:
-                          type: string
-                        TYPE:
-                          type: string
-                        UPDATEDON:
-                          type: string
-                        UPDATEDBY:
-                          type: string
-                        CREATEDON:
-                          type: string
-                        CREATEDBY:
-                          type: string
-    UpdateDseBody:
-      description: Update Dse body. When it comes to properties, only existing properties can be updated with a valid value that has been created in the admin portal of the app.
+                - $ref: '#/components/schemas/VIEW'
+    UpdateColumnBody:
+      description: Update Column body. When it comes to properties, only existing properties can be updated with a valid value that has been created in the admin portal of the app.
       required: true
       content:
         application/json:
@@ -494,27 +330,11 @@ components:
               allOf:
                 - type: object
                   required:
-                    - DSEID
+                    - COLUMNID
                   properties:
-                    DSEID:
+                    COLUMNID:
                       type: string
-                    NAME:
-                      type: string
-                    SOURCE_PROPERTIES:
-                      type: object
-                      properties:
-                        CLASSIFICATION:
-                          type: string
-                        TYPE:
-                          type: string
-                        UPDATEDON:
-                          type: string
-                        UPDATEDBY:
-                          type: string
-                        CREATEDON:
-                          type: string
-                        CREATEDBY:
-                          type: string
+                - $ref: '#/components/schemas/COLUMN'
     CreateReportBody:
       description: Create Report body. Creating properties in this way is not supported.
       required: true
@@ -524,24 +344,24 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/REPORTNoProperty'
-    CreateDatasetBody:
-      description: Create Dataset body. Creating properties in this way is not supported.
+    CreateViewBody:
+      description: Create View body. Creating properties in this way is not supported.
       required: true
       content:
         application/json:
           schema:
             type: array
             items:
-              $ref: '#/components/schemas/DATASETNoProperty'
-    CreateDseBody:
-      description: Create Dse body. Creating properties in this way is not supported.
+              $ref: '#/components/schemas/VIEWNoProperty'
+    CreateColumnBody:
+      description: Create Column body. Creating properties in this way is not supported.
       required: true
       content:
         application/json:
           schema:
             type: array
             items:
-              $ref: '#/components/schemas/DSE'
+              $ref: '#/components/schemas/COLUMN'
     ListBody:
       description: Body to filter results
       required: true
@@ -564,7 +384,7 @@ components:
         application/json:
           schema:
             type: array
-            description: Array of IDs that have to be removed. When removing a METRIC, the values should correspond with the METRICID field etc..
+            description: Array of IDs that have to be removed. When removing a KPI, the values should correspond with the KPIID field etc..
             items:
               type: string
   responses:
@@ -602,9 +422,9 @@ components:
           properties:
             node:
               $ref: '#/components/schemas/WhereNoProperties'
-    ConnectDataset:
+    ConnectView:
       type: object
-      description: Using the connect key will look for DATASETs and create/remove a relation between the current object and the matching reports
+      description: Using the connect key will look for VIEWs and create/remove a relation between the current object and the matching reports
       properties:
         where:
           type: object
@@ -628,7 +448,7 @@ components:
           default: 20
           type: number
           description: The number of items that are being returned. Defaults to 20
-        offset:
+        skip:
           default: 0
           type: number
           description: used in combination with limit to implement pagination.
@@ -637,32 +457,32 @@ components:
       properties:
         total:
           type: number
-          description: The total number of objects in the graph. Use in conjunction with limit and offset to implement pagination.
+          description: The total number of objects in the graph. Use in conjunction with limit and skip to implement pagination.
     WhereNoProperties:
       type: object
       properties:
         '{TAG}ID':
           type: string
-          description: Replace {TAG} with one of the major objects described in this document -> METRICID, REPORTID, DATASETID, DSEID
+          description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
         '{TAG}ID_NOT':
           type: string
-          description: Replace {TAG} with one of the major objects described in this document -> METRICID, REPORTID, DATASETID, DSEID
+          description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
         '{TAG}ID_IN':
           type: array
-          description: Replace {TAG} with one of the major objects described in this document -> METRICID, REPORTID, DATASETID, DSEID
+          description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
           items:
             type: string
         '{TAG}ID_NOT_IN':
           type: array
-          description: Replace {TAG} with one of the major objects described in this document -> METRICID, REPORTID, DATASETID, DSEID
+          description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
           items:
             type: string
         '{TAG}ID_CONTAINS':
           type: string
-          description: Replace {TAG} with one of the major objects described in this document -> METRICID, REPORTID, DATASETID, DSEID
+          description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
         '{TAG}ID_NOT_CONTAINS':
           type: string
-          description: Replace {TAG} with one of the major objects described in this document -> METRICID, REPORTID, DATASETID, DSEID
+          description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
         '{FIELD}':
           type: string
           description: Replace {FIELD} with one of the fields that are returned from the API. If you wanted to query on NAME for example you can use NAME, NAME_NOT, etc...
@@ -690,26 +510,26 @@ components:
       properties:
         '{TAG}ID':
           type: string
-          description: Replace {TAG} with one of the major objects described in this document -> METRICID, REPORTID, DATASETID, DSEID
+          description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
         '{TAG}ID_NOT':
           type: string
-          description: Replace {TAG} with one of the major objects described in this document -> METRICID, REPORTID, DATASETID, DSEID
+          description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
         '{TAG}ID_IN':
           type: array
-          description: Replace {TAG} with one of the major objects described in this document -> METRICID, REPORTID, DATASETID, DSEID
+          description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
           items:
             type: string
         '{TAG}ID_NOT_IN':
           type: array
-          description: Replace {TAG} with one of the major objects described in this document -> METRICID, REPORTID, DATASETID, DSEID
+          description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
           items:
             type: string
         '{TAG}ID_CONTAINS':
           type: string
-          description: Replace {TAG} with one of the major objects described in this document -> METRICID, REPORTID, DATASETID, DSEID
+          description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
         '{TAG}ID_NOT_CONTAINS':
           type: string
-          description: Replace {TAG} with one of the major objects described in this document -> METRICID, REPORTID, DATASETID, DSEID
+          description: Replace {TAG} with one of the major objects described in this document -> KPIID, REPORTID, VIEWID, COLUMNID
         '{FIELD}':
           type: string
           description: Replace {FIELD} with one of the fields that are returned from the API. If you wanted to query on NAME for example you can use NAME, NAME_NOT, etc...
@@ -755,7 +575,7 @@ components:
       required:
         - code
         - message
-    DATASETNoProperty:
+    VIEWNoProperty:
       type: object
       properties:
         NAME:
@@ -764,26 +584,35 @@ components:
           type: string
         DESCFULLTEXT:
           type: string
-        SOURCE_PROPERTIES:
+        DESCHTML:
+          type: string
+        TYPE:
+          type: string
+        FOLDER:
+          type: string
+        CREATED_ON:
+          type: string
+        CREATED_BY:
+          type: string
+        CHANGED_ON:
+          type: string
+        CHANGED_BY:
+          type: string
+        REPORT:
           type: object
           properties:
-            CLASSIFICATION:
-              type: string
-            TYPE:
-              type: string
-            UPDATEDON:
-              type: string
-            UPDATEDBY:
-              type: string
-            CREATEDON:
-              type: string
-            CREATEDBY:
-              type: string
-        DSES:
-          type: string
-          items:
-            $ref: '#/components/requestBodies/CreateDseBody'
-    DATASETNoConnectDisconnect:
+            connect:
+              type: array
+              items:
+                $ref: '#/components/schemas/ConnectReport'
+        VIEW:
+          type: object
+          properties:
+            connect:
+              type: array
+              items:
+                $ref: '#/components/schemas/ConnectView'
+    VIEWNoConnectDisconnect:
       type: object
       properties:
         NAME:
@@ -792,21 +621,20 @@ components:
           type: string
         DESCFULLTEXT:
           type: string
-        SOURCE_PROPERTIES:
-          type: object
-          properties:
-            CLASSIFICATION:
-              type: string
-            TYPE:
-              type: string
-            UPDATEDON:
-              type: string
-            UPDATEDBY:
-              type: string
-            CREATEDON:
-              type: string
-            CREATEDBY:
-              type: string
+        DESCHTML:
+          type: string
+        TYPE:
+          type: string
+        FOLDER:
+          type: string
+        CREATED_ON:
+          type: string
+        CREATED_BY:
+          type: string
+        CHANGED_ON:
+          type: string
+        CHANGED_BY:
+          type: string
         PROPERTIES:
           type: object
           properties:
@@ -817,7 +645,7 @@ components:
                 type: string
       required:
         - NAME
-    DATASET:
+    VIEW:
       type: object
       properties:
         NAME:
@@ -826,21 +654,20 @@ components:
           type: string
         DESCFULLTEXT:
           type: string
-        SOURCE_PROPERTIES:
-          type: object
-          properties:
-            CLASSIFICATION:
-              type: string
-            TYPE:
-              type: string
-            UPDATEDON:
-              type: string
-            UPDATEDBY:
-              type: string
-            CREATEDON:
-              type: string
-            CREATEDBY:
-              type: string
+        DESCHTML:
+          type: string
+        TYPE:
+          type: string
+        FOLDER:
+          type: string
+        CREATED_ON:
+          type: string
+        CREATED_BY:
+          type: string
+        CHANGED_ON:
+          type: string
+        CHANGED_BY:
+          type: string
         PROPERTIES:
           type: object
           properties:
@@ -860,17 +687,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/ConnectReport'
-        DATASET:
+        VIEW:
           type: object
           properties:
             disconnect:
               type: array
               items:
-                $ref: '#/components/schemas/ConnectDataset'
+                $ref: '#/components/schemas/ConnectView'
             connect:
               type: array
               items:
-                $ref: '#/components/schemas/ConnectDataset'
+                $ref: '#/components/schemas/ConnectView'
       required:
         - NAME
     REPORTNoProperty:
@@ -882,21 +709,30 @@ components:
           type: string
         DESCFULLTEXT:
           type: string
-        SOURCE_PROPERTIES:
+        DESCHTML:
+          type: string
+        INTERPRETATION:
+          type: string
+        CALC_FORMULA:
+          type: string
+        CALC_FORMULAHTML:
+          type: string
+        CALC_FORMULAFULLTEXT:
+          type: string
+        REPORT:
           type: object
           properties:
-            CLASSIFICATION:
-              type: string
-            TYPE:
-              type: string
-            UPDATEDON:
-              type: string
-            UPDATEDBY:
-              type: string
-            CREATEDON:
-              type: string
-            CREATEDBY:
-              type: string
+            connect:
+              type: array
+              items:
+                $ref: '#/components/schemas/ConnectReport'
+        VIEW:
+          type: object
+          properties:
+            connect:
+              type: array
+              items:
+                $ref: '#/components/schemas/ConnectView'
     REPORTNoConnectDisconnect:
       type: object
       properties:
@@ -906,21 +742,16 @@ components:
           type: string
         DESCFULLTEXT:
           type: string
-        SOURCE_PROPERTIES:
-          type: object
-          properties:
-            CLASSIFICATION:
-              type: string
-            TYPE:
-              type: string
-            UPDATEDON:
-              type: string
-            UPDATEDBY:
-              type: string
-            CREATEDON:
-              type: string
-            CREATEDBY:
-              type: string
+        DESCHTML:
+          type: string
+        INTERPRETATION:
+          type: string
+        CALC_FORMULA:
+          type: string
+        CALC_FORMULAHTML:
+          type: string
+        CALC_FORMULAFULLTEXT:
+          type: string
         PROPERTIES:
           type: object
           properties:
@@ -940,21 +771,16 @@ components:
           type: string
         DESCFULLTEXT:
           type: string
-        SOURCE_PROPERTIES:
-          type: object
-          properties:
-            CLASSIFICATION:
-              type: string
-            TYPE:
-              type: string
-            UPDATEDON:
-              type: string
-            UPDATEDBY:
-              type: string
-            CREATEDON:
-              type: string
-            CREATEDBY:
-              type: string
+        DESCHTML:
+          type: string
+        INTERPRETATION:
+          type: string
+        CALC_FORMULA:
+          type: string
+        CALC_FORMULAHTML:
+          type: string
+        CALC_FORMULAFULLTEXT:
+          type: string
         PROPERTIES:
           type: object
           properties:
@@ -974,20 +800,20 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/ConnectReport'
-        DATASET:
+        VIEW:
           type: object
           properties:
             disconnect:
               type: array
               items:
-                $ref: '#/components/schemas/ConnectDataset'
+                $ref: '#/components/schemas/ConnectView'
             connect:
               type: array
               items:
-                $ref: '#/components/schemas/ConnectDataset'
+                $ref: '#/components/schemas/ConnectView'
       required:
         - NAME
-    DSE:
+    COLUMN:
       type: object
       properties:
         NAME:
@@ -996,27 +822,24 @@ components:
           type: string
         DESCFULLTEXT:
           type: string
+        DESCHTML:
+          type: string
+        TYPE:
+          type: string
+        FIELDTYPE:
+          type: string
+        DATATYPE:
+          type: string
+        EXPRESSION:
+          type: string
         PARENT:
           type: string
         IS_LEAF:
           type: string
-        DATASETID:
+        FOLDER:
           type: string
-        SOURCE_PROPERTIES:
-          type: object
-          properties:
-            CLASSIFICATION:
-              type: string
-            TYPE:
-              type: string
-            UPDATEDON:
-              type: string
-            UPDATEDBY:
-              type: string
-            CREATEDON:
-              type: string
-            CREATEDBY:
-              type: string
+        VIEWID:
+          type: string
       required:
         - NAME
   securitySchemes:
@@ -1025,5 +848,5 @@ components:
       scheme: bearer
       bearerFormat: JWT
 externalDocs:
-  description: Find out more about dScribe
-  url: https://dscribedata.com
+  description: 'Find out more about dScribe'
+  url: 'https://dscribedata.com'

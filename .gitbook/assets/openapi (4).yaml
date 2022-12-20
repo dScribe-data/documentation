@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  description: This API can be used to interact with the dScribe Graph. It exposes CRUD operations for all the major objects like METRICs, Attributes, Data Assets and Dataset Elements.
+  description: This API can be used to interact with the dScribe Graph. It exposes CRUD operations for all the major objects like METRICs, Attributes, Datasets and Dataset Elements.
   version: 1.0.0
   title: dScribe Data Catalog API
   termsOfService: https://dscribedata.com/terms/
@@ -196,7 +196,7 @@ paths:
     summary: Represents a Data Asset within dScribe
     post:
       tags:
-        - Data Asset
+        - Dataset
       requestBody:
         $ref: '#/components/requestBodies/ListBody'
       responses:
@@ -233,7 +233,7 @@ paths:
     summary: Represents a Data Asset within dScribe
     post:
       tags:
-        - Data Asset
+        - Dataset
       requestBody:
         $ref: '#/components/requestBodies/CreateDatasetBody'
       responses:
@@ -249,7 +249,7 @@ paths:
     summary: Represents a Data Asset within dScribe
     post:
       tags:
-        - Data Asset
+        - Dataset
       requestBody:
         $ref: '#/components/requestBodies/UpdateDatasetBody'
       responses:
@@ -268,7 +268,7 @@ paths:
     summary: Represents a Data Asset within dScribe
     post:
       tags:
-        - Data Asset
+        - Dataset
       requestBody:
         $ref: '#/components/requestBodies/DeleteBody'
       responses:
@@ -780,9 +780,9 @@ components:
             CREATEDBY:
               type: string
         DSES:
-          type: string
+          type: array
           items:
-            $ref: '#/components/requestBodies/CreateDseBody'
+            $ref: '#/components/schemas/DSE'
     DATASETNoConnectDisconnect:
       type: object
       properties:

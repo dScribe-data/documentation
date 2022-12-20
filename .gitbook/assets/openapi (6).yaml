@@ -783,6 +783,20 @@ components:
           type: string
           items:
             $ref: '#/components/requestBodies/CreateDseBody'
+        REPORT:
+          type: object
+          properties:
+            connect:
+              type: array
+              items:
+                $ref: '#/components/schemas/ConnectReport'
+        DATASET:
+          type: object
+          properties:
+            connect:
+              type: array
+              items:
+                $ref: '#/components/schemas/ConnectDataset'
     DATASETNoConnectDisconnect:
       type: object
       properties:
@@ -897,6 +911,20 @@ components:
               type: string
             CREATEDBY:
               type: string
+        REPORT:
+          type: object
+          properties:
+            connect:
+              type: array
+              items:
+                $ref: '#/components/schemas/ConnectReport'
+        DATASET:
+          type: object
+          properties:
+            connect:
+              type: array
+              items:
+                $ref: '#/components/schemas/ConnectDataset'
     REPORTNoConnectDisconnect:
       type: object
       properties:
