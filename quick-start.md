@@ -6,9 +6,9 @@ The first thing you have to do is get an API key. Go to the dScribe Portal and n
 
 ![The dScribe API keys page](<.gitbook/assets/apikeys (1).png>)
 
-Create a key with the following settings:
+Create a key:
 
-![A superuser token](<.gitbook/assets/create key.png>)
+<figure><img src=".gitbook/assets/Screenshot 2022-12-20 at 14.16.49.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 **Good to know**: here we are creating a superuser token. This means it will have permissions to do everything within the app. If you want to create a restricted token, look at our guides around security and add the necessary permissionsets to the token.
