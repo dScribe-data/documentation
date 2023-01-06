@@ -63,10 +63,6 @@ RegEx expressions might take some getting used to. A good introduction can be fo
 
 .\*  --> Any number of characters           --> Example: _C.\*mer_ to match "Customer"
 
-^   --> Starting with...                              --> Example: _^Cust_ to match "Customer"
-
-$   --> Ending with...                                --> Example: _omer$_ to match "Customer"
-
 \    --> Treat a special character as text --> Example: \\\[Development\\] to match \
 &#x20;                                                                       "\[Development]"&#x20;
 
