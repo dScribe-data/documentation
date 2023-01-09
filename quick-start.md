@@ -115,7 +115,7 @@ This query will return the first 25 results. You can use the skip and limit para
 **Good to know:** Listing of objects from the graph will always be paginated.&#x20;
 {% endhint %}
 
-Take a look at how you might call this method using our official libraries, or via `curl`:
+Take a look at how you might call this method via `curl`:
 
 {% tabs %}
 {% tab title="curl" %}
