@@ -1,35 +1,8 @@
 # Table of contents
 
-* [Welcome!](README.md)
-
-## Configuration
-
-* [Asset Types](configuration/asset-types.md)
-* [Custom Properties](configuration/custom-properties.md)
-* [Automation](configuration/automation.md)
-
-## Security
-
-* [Users](<README (1).md>)
-* [Teams](security/teams.md)
-* [Access Policies](security/access-policies.md)
-* [Enterprise Authentication](security/enterprise-authentication/README.md)
-  * [Azure AD](security/enterprise-authentication/azure-ad.md)
-
-## Connectors
-
-* [Connector Specific](connectors/connector-specific/README.md)
-  * [Microsoft Power BI](connectors/connector-specific/microsoft-power-bi.md)
-  * [SAP BusinessObjects](connectors/connector-specific/sap-business-objects.md)
-  * [Sharepoint](connectors/connector-specific/sharepoint.md)
-  * [BigQuery](connectors/connector-specific/bigquery.md)
-  * [Google Drive](connectors/connector-specific/google-drive.md)
-  * [Snowflake](connectors/connector-specific/snowflake.md)
-  * [SAP Business Warehouse (BW)](connectors/connector-specific/sap-business-warehouse-bw.md)
-
 ## API
 
-* [Intro](api/intro.md)
+* [Intro](README.md)
 * [Quick Start](quick-start.md)
 * [Properties](properties.md)
 * [Examples](examples/list/README.md)
