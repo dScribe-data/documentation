@@ -11,7 +11,7 @@ Create a key:
 <figure><img src=".gitbook/assets/Screenshot 2022-12-20 at 14.16.49.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-**Good to know**: here we are creating a superuser token. This means it will have permissions to do everything within the app. If you want to create a restricted token, look at our guides around security and add the necessary permissionsets to the token.
+**Good to know**: here we are creating a superuser token. This means it will have permissions to do everything within the app.
 {% endhint %}
 
 Copy the token by clicking on the copy icon:
@@ -125,3 +125,18 @@ curl https://{your_tenant}.dscribedata.com/api/report/list
 ```
 {% endtab %}
 {% endtabs %}
+
+```
+const myHeaders = new Headers();
+myHeaders.append("Authorization", "Bearer ACCES TOKEN");
+
+const requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+};
+
+fetch("https://{your_tenant}.dscribedata.com/api/report/list", requestOptions)
+  .then(response => response.json())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
