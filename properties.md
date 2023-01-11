@@ -10,8 +10,8 @@ Properties are used within the dScribe application to enrich your objects with e
 
 Take the previous request:
 
-{% swagger src=".gitbook/assets/openapi (4).yaml" path="/report/list" method="post" %}
-[openapi (4).yaml](<.gitbook/assets/openapi (4).yaml>)
+{% swagger src=".gitbook/assets/openapi (7).yaml" path="/report/list" method="post" %}
+[openapi (7).yaml](<.gitbook/assets/openapi (7).yaml>)
 {% endswagger %}
 
 Notice the PROPERTIES key. This key will be populated with all the readable ids and values of the properties assigned to the object. The readable ids (API handles) can be found in the dScribe application administration portal.
@@ -22,8 +22,8 @@ Notice the PROPERTIES key. This key will be populated with all the readable ids 
 
 Take the following request:
 
-{% swagger src=".gitbook/assets/openapi (4).yaml" path="/report/create" method="post" %}
-[openapi (4).yaml](<.gitbook/assets/openapi (4).yaml>)
+{% swagger src=".gitbook/assets/openapi (7).yaml" path="/report/create" method="post" %}
+[openapi (7).yaml](<.gitbook/assets/openapi (7).yaml>)
 {% endswagger %}
 
 Again notice the PROPERTIES key. In this call you can pass in the same API handles as discussed in the previous section. The properties passed in here **have to exist in the portal.** If you pass in properties that do not exist, the request will fail.

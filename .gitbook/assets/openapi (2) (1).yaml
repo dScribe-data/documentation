@@ -1,13 +1,13 @@
 openapi: 3.0.3
 info:
-  description: This API can be used to interact with the dScribe Graph. It exposes CRUD operations for all the major objects like METRICs, Attributes, Datasets and Dataset Elements.
+  description: This API can be used to interact with the dScribe Graph. It exposes CRUD operations for all the major objects like METRICs, Attributes, Data Assets and Dataset Elements.
   version: 1.0.0
   title: dScribe Data Catalog API
   termsOfService: https://dscribedata.com/terms/
   contact:
     email: support@dscribedata.com
 servers:
-  - url: https://your_tenant.dscribedata.com/api
+  - url: https://{your_tenant}.dscribedata.com/api
     description: Production API server of dScribe
 paths:
   /metric/list:
@@ -44,13 +44,16 @@ paths:
           $ref: '#/components/responses/NotFound'
         '500':
           $ref: '#/components/responses/InternalServerError'
+      externalDocs:
+        description: Learn more about a Reports.
+        url: https://documentation.dscribedata.com/reports
   /metric/create:
     summary: Represents a Metric within dScribe
     post:
       tags:
         - Metric
       requestBody:
-        $ref: '#/components/requestBodies/CreateMetricBody'
+        $ref: '#/components/requestBodies/CreateReportBody'
       responses:
         '200':
           $ref: '#/components/responses/SuccessPostPutDelete'
@@ -76,6 +79,9 @@ paths:
           $ref: '#/components/responses/NotFound'
         '500':
           $ref: '#/components/responses/InternalServerError'
+      externalDocs:
+        description: Learn more about a Report.
+        url: https://documentation.dscribedata.com/reports
   /metric/delete:
     summary: Represents a Metric within dScribe
     post:
@@ -92,6 +98,9 @@ paths:
           $ref: '#/components/responses/NotFound'
         '500':
           $ref: '#/components/responses/InternalServerError'
+      externalDocs:
+        description: Learn more about a Report.
+        url: https://documentation.dscribedata.com/reports
   /report/list:
     summary: Represents a Report within dScribe
     post:
@@ -126,6 +135,9 @@ paths:
           $ref: '#/components/responses/NotFound'
         '500':
           $ref: '#/components/responses/InternalServerError'
+      externalDocs:
+        description: Learn more about a Reports.
+        url: https://documentation.dscribedata.com/reports
   /report/create:
     summary: Represents a Report within dScribe
     post:
@@ -158,6 +170,9 @@ paths:
           $ref: '#/components/responses/NotFound'
         '500':
           $ref: '#/components/responses/InternalServerError'
+      externalDocs:
+        description: Learn more about a Report.
+        url: https://documentation.dscribedata.com/reports
   /report/delete:
     summary: Represents a Report within dScribe
     post:
@@ -174,11 +189,14 @@ paths:
           $ref: '#/components/responses/NotFound'
         '500':
           $ref: '#/components/responses/InternalServerError'
+      externalDocs:
+        description: Learn more about a Report.
+        url: https://documentation.dscribedata.com/reports
   /dataset/list:
     summary: Represents a Data Asset within dScribe
     post:
       tags:
-        - Dataset
+        - Data Asset
       requestBody:
         $ref: '#/components/requestBodies/ListBody'
       responses:
@@ -208,11 +226,14 @@ paths:
           $ref: '#/components/responses/NotFound'
         '500':
           $ref: '#/components/responses/InternalServerError'
+      externalDocs:
+        description: Learn more about a Data Asset.
+        url: https://documentation.dscribedata.com/data-assets
   /dataset/create:
     summary: Represents a Data Asset within dScribe
     post:
       tags:
-        - Dataset
+        - Data Asset
       requestBody:
         $ref: '#/components/requestBodies/CreateDatasetBody'
       responses:
@@ -228,7 +249,7 @@ paths:
     summary: Represents a Data Asset within dScribe
     post:
       tags:
-        - Dataset
+        - Data Asset
       requestBody:
         $ref: '#/components/requestBodies/UpdateDatasetBody'
       responses:
@@ -240,11 +261,14 @@ paths:
           $ref: '#/components/responses/NotFound'
         '500':
           $ref: '#/components/responses/InternalServerError'
+      externalDocs:
+        description: Learn more about a Data Asset.
+        url: https://documentation.dscribedata.com/data-assets
   /dataset/delete:
     summary: Represents a Data Asset within dScribe
     post:
       tags:
-        - Dataset
+        - Data Asset
       requestBody:
         $ref: '#/components/requestBodies/DeleteBody'
       responses:
@@ -256,6 +280,9 @@ paths:
           $ref: '#/components/responses/NotFound'
         '500':
           $ref: '#/components/responses/InternalServerError'
+      externalDocs:
+        description: Learn more about a Data Asset.
+        url: https://documentation.dscribedata.com/data-assets
   /dse/list:
     summary: Represents a Dse within dScribe
     post:
@@ -290,6 +317,9 @@ paths:
           $ref: '#/components/responses/NotFound'
         '500':
           $ref: '#/components/responses/InternalServerError'
+      externalDocs:
+        description: Learn more about a Dse.
+        url: https://documentation.dscribedata.com/dse
   /dse/create:
     summary: Represents a Dse within dScribe
     post:
@@ -322,6 +352,9 @@ paths:
           $ref: '#/components/responses/NotFound'
         '500':
           $ref: '#/components/responses/InternalServerError'
+      externalDocs:
+        description: Learn more about a Dse.
+        url: https://documentation.dscribedata.com/dse
   /dse/delete:
     summary: Represents a Dse within dScribe
     post:
@@ -338,6 +371,9 @@ paths:
           $ref: '#/components/responses/NotFound'
         '500':
           $ref: '#/components/responses/InternalServerError'
+      externalDocs:
+        description: Learn more about a Dse.
+        url: https://documentation.dscribedata.com/dse
 security:
   - bearerAuth: []
 components:
@@ -488,15 +524,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/REPORTNoProperty'
-    CreateMetricBody:
-      description: Create Metric body. Creating properties in this way is not supported.
-      required: true
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/MetricNoProperty'
     CreateDatasetBody:
       description: Create Dataset body. Creating properties in this way is not supported.
       required: true
@@ -753,9 +780,23 @@ components:
             CREATEDBY:
               type: string
         DSES:
-          type: array
+          type: string
           items:
-            $ref: '#/components/schemas/DSE'
+            $ref: '#/components/requestBodies/CreateDseBody'
+        REPORT:
+          type: object
+          properties:
+            connect:
+              type: array
+              items:
+                $ref: '#/components/schemas/ConnectReport'
+        DATASET:
+          type: object
+          properties:
+            connect:
+              type: array
+              items:
+                $ref: '#/components/schemas/ConnectDataset'
     DATASETNoConnectDisconnect:
       type: object
       properties:
@@ -846,13 +887,6 @@ components:
                 $ref: '#/components/schemas/ConnectDataset'
       required:
         - NAME
-    MetricNoProperty:
-      type: object
-      properties:
-        NAME:
-          type: string
-        DESC:
-          type: string
     REPORTNoProperty:
       type: object
       properties:
@@ -877,6 +911,20 @@ components:
               type: string
             CREATEDBY:
               type: string
+        REPORT:
+          type: object
+          properties:
+            connect:
+              type: array
+              items:
+                $ref: '#/components/schemas/ConnectReport'
+        DATASET:
+          type: object
+          properties:
+            connect:
+              type: array
+              items:
+                $ref: '#/components/schemas/ConnectDataset'
     REPORTNoConnectDisconnect:
       type: object
       properties:
