@@ -4,7 +4,7 @@
 
 The first thing you have to do is get an API key. Go to the dScribe Portal and navigate to the admin section. Find the API keys menu item and click on it. You should see something like this:
 
-![The dScribe API keys page](<.gitbook/assets/apikeys (1).png>)
+<figure><img src=".gitbook/assets/image (15).png" alt=""><figcaption><p>The API Keys screen in the dScribe application</p></figcaption></figure>
 
 Create a key:
 
@@ -14,19 +14,35 @@ Create a key:
 **Good to know**: here we are creating a superuser token. This means it will have permissions to do everything within the app.
 {% endhint %}
 
-Copy the token by clicking on the copy icon:
+You will see a popup that will show you your secret. **This will only be shown once, store it somewhere safe.**
 
-![](.gitbook/assets/copy.png)
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-This token can now be exchanged for an access\_token _to make authenticated requests. To get_ an access_\__token, make the following request (in postman or in the browser):&#x20;
+The client\_id and client\_secret can now be exchanged for an access\_token _to make authenticated requests. To get_ an access_\__token, make the following request (in postman or in the browser):&#x20;
 
-{% swagger method="get" path="/api/api-token" baseUrl="https://{your_tenant}.dscribedata.com" summary="Exchange your API key for an access_token" %}
+{% swagger method="post" path="/api/api-token" baseUrl="https://{your_tenant}.dscribedata.com" summary="Exchange your client_id and client_secret for an access_token" %}
 {% swagger-description %}
 The token will be valid for 24 hours
 {% endswagger-description %}
 
-{% swagger-parameter in="query" name="api_key" required="true" %}
-The API key you obtained above
+{% swagger-parameter in="body" required="true" name="client_id" %}
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="client_secret" required="true" %}
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Content-Type" required="true" %}
+application/x-www-form-urlencoded
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="scope" required="true" %}
+default
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="grant_type" required="true" %}
+client_credentials
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Will return an access_token" %}
@@ -38,10 +54,6 @@ The API key you obtained above
 {% endswagger-response %}
 {% endswagger %}
 
-{% hint style="info" %}
-**Good to know:** As mentioned above, restrict access to your resources by applying permission sets to your API keys.
-{% endhint %}
-
 ## Make your first request
 
 Lets start by listing all the reports stored in the dScribe graph.
@@ -51,7 +63,7 @@ Lets start by listing all the reports stored in the dScribe graph.
 This query will return the first 25 results. You can use the skip and limit parameters to build in pagination.
 {% endswagger-description %}
 
-{% swagger-parameter in="body" name="body" type="json" %}
+{% swagger-parameter in="body" name="body" type="json" required="false" %}
 
 {% endswagger-parameter %}
 
